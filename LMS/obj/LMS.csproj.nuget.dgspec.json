@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS-PRO\\source\\repos\\LMS\\LMS\\LMS.csproj": {}
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS-PRO\\source\\repos\\LMS\\LMS\\LMS.csproj": {
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS-PRO\\source\\repos\\LMS\\LMS\\LMS.csproj",
+        "projectUniqueName": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
         "projectName": "LMS",
-        "projectPath": "C:\\Users\\ASUS-PRO\\source\\repos\\LMS\\LMS\\LMS.csproj",
-        "packagesPath": "C:\\Users\\ASUS-PRO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS-PRO\\source\\repos\\LMS\\LMS\\obj\\",
+        "projectPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
+        "packagesPath": "C:\\Users\\FPT SHOP\\.nuget\\packages\\",
+        "outputPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS-PRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FPT SHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
