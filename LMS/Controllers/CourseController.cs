@@ -28,10 +28,6 @@ namespace LMS.Controllers
         [HttpPost]
         public IActionResult Create(Course course)
         {
-            if (!User.IsInRole("Lecturer"))
-            {
-                return Forbid();
-            }
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Course>("course");
             course.Id = Guid.NewGuid().ToString();
