@@ -27,22 +27,17 @@ namespace LMS.Controllers
         public IActionResult Create(Admin admin)
         {
             var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Admin>("admin");
+
+            string collectionName = "admin";
+            if (admin.Role == "Lecturer")
+            {
+                collectionName = "lecturer";
+            }
+
+            var table = database.GetCollection<Admin>(collectionName);
             admin.Id = Guid.NewGuid().ToString();
             table.InsertOne(admin);
             return RedirectToAction("Index");
-        }
-
-        public ActionResult Edit(string id)
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Admin>("admin");
-            var admin = table.Find(c => c.Id == id).FirstOrDefault();
-            if (admin == null)
-            {
-                return NotFound();
-            }
-            return View(admin);
         }
 
         [HttpPost]
