@@ -14,11 +14,11 @@ namespace LMS.Controllers
         [HttpPost]
         public IActionResult Login(Login model)
         {
-            if (model.Username == "admin" && model.Password == "adminpassword")
+            if (model.Username.Equals("admin") && model.Password.Equals("adminpassword"))
             {
                 return RedirectToAction("Index", "Admin");
             }
-            else if (model.Username == "lecturer" && model.Password == "lecturerpassword")
+            else if (model.Username.Equals("lecturer") && model.Password.Equals("lecturerpassword"))
             {
                 return RedirectToAction("Index", "Lecturer");
             }
