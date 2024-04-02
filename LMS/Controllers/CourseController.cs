@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LMS.Controllers
 {
-    [Authorize(Roles = "Lecturer")]
+    //[Authorize(Roles = "Lecturer")]
     public class CourseController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
