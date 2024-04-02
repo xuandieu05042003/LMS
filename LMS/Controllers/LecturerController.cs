@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LMS.Controllers
 {
-    [Authorize(Roles = "Lecturer")]
+    //[Authorize(Roles = "Lecturer")]
     public class LecturerController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
@@ -21,19 +21,19 @@ namespace LMS.Controllers
             var lecturers = table.Find(FilterDefinition<Lecturer>.Empty).ToList();
             return View(lecturers);
         }
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult Create(Course course)
-        //{
-        //    var database = client.GetDatabase("universityDtabase");
-        //    var table = database.GetCollection<Course>("course");
-        //    course.Id = Guid.NewGuid().ToString();
-        //    table.InsertOne(course);
-        //    return RedirectToAction("Index");
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Course course)
+        {
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Course>("course");
+            course.Id = Guid.NewGuid().ToString();
+            table.InsertOne(course);
+            return RedirectToAction("Index");
+        }
 
         public ActionResult Edit(string id)
         {
