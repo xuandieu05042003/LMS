@@ -12,19 +12,19 @@ namespace LMS.Controllers
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
 
-        public IActionResult Index()
+        public IActionResult Student()
         {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            var student = table.Find(FilterDefinition<Student>.Empty).ToList();
-            return View(student);
+            //var database = client.GetDatabase("universityDtabase");
+            //var table = database.GetCollection<Student>("student");
+            //var student = table.Find(FilterDefinition<Student>.Empty).ToList();
+            return View(/*student*/);
         }
 
-        public IActionResult Create()
+        public IActionResult StudentAdd()
         {
             return View();
         }
-        [HttpPost]
+		[HttpPost]
         public IActionResult Create(Student student)
         {
             var database = client.GetDatabase("universityDtabase");
@@ -93,5 +93,5 @@ namespace LMS.Controllers
             table.DeleteOne(c => c.Id == student.Id);
             return RedirectToAction("Index");
         }
-    }
+	}
 }

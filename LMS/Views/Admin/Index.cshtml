@@ -2,12 +2,13 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AdminAdd">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -56,9 +57,9 @@
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Edit", "Edit", new { username = item.Username }) |
+                    @Html.ActionLink("Details", "Details", new { username = item.Username }) |
+                    @Html.ActionLink("Delete", "Delete", new { username = item.Username })
                 </td>
             </tr>
         }

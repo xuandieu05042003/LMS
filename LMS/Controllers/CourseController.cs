@@ -11,26 +11,27 @@ namespace LMS.Controllers
     public class CourseController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
-        public IActionResult Index()
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Course>("course");
-            var course = table.Find(FilterDefinition<Course>.Empty).ToList();
-            return View(course);
-        }
-
-        public IActionResult Create()
+        public IActionResult Course()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Create(Course course)
+		public IActionResult CourseDetail()
+		{
+            return View();
+		}
+		public IActionResult CourseAdd()
+		{
+			return View();
+		}
+		[HttpPost]
+        public IActionResult Create(/*Course course*/)
         {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Course>("course");
-            course.Id = Guid.NewGuid().ToString();
-            table.InsertOne(course);
-            return RedirectToAction("Index");
+            //var database = client.GetDatabase("universityDtabase");
+            //var table = database.GetCollection<Course>("course");
+            //course.Id = Guid.NewGuid().ToString();
+            //table.InsertOne(course);
+            //return RedirectToAction("Index");
+            return View();
         }
 
         public ActionResult Edit(string id)
@@ -91,6 +92,5 @@ namespace LMS.Controllers
             table.DeleteOne(c => c.Id == course.Id);
             return RedirectToAction("Index");
         }
-
-    }
+	}
 }

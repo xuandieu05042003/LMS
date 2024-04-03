@@ -12,15 +12,18 @@ namespace LMS.Controllers
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
 
-        public IActionResult Index()
+        public IActionResult AdminLecture()
         {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Lecturer>("lecturer");
-            var lecturers = table.Find(FilterDefinition<Lecturer>.Empty).ToList();
-            return View(lecturers);
+            //var database = client.GetDatabase("universityDtabase");
+            //var table = database.GetCollection<Lecturer>("lecturer");
+            //var lecturers = table.Find(FilterDefinition<Lecturer>.Empty).ToList();
+            return View(/*lecturers*/);
         }
-
-        public IActionResult Create()
+		public IActionResult LecturerAdd()
+		{
+			return View();
+		}
+		public IActionResult Create()
         {
             return View();
         }

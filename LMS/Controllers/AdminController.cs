@@ -19,12 +19,12 @@ namespace LMS.Controllers
             return View(admin);
         }
 
-        public IActionResult Create()
+        public IActionResult AdminAdd()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Admin admin)
+        public IActionResult AdminAdd(Admin admin)
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
@@ -63,7 +63,7 @@ namespace LMS.Controllers
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
-            var admin = table.Find(c => c.Id == id).FirstOrDefault();
+            var admin = table.Find(c => c.Id ==id).FirstOrDefault();
             if (admin == null)
             {
                 return NotFound();

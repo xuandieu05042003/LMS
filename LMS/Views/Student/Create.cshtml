@@ -4,48 +4,133 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Student</h4>
-<h5>@ViewBag.Mgs</h5>
-<hr />
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @* <div class="form-group">
-            <label asp-for="Id" class="control-label"></label>
-            <input asp-for="Id" class="form-control" />
-            <span asp-validation-for="Id" class="text-danger"></span>
-            </div> *@
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>FPT Training System</title>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css"
+		  href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+		<!-- Page content START -->
+		<div class="page-content">
+
+			<!-- Top bar START -->
+			<nav class="navbar top-bar navbar-light border-bottom py-0 py-xl-3">
+				<div class="container-fluid p-0">
+					<div class="d-flex align-items-center w-100">
+
+						<!-- Logo START -->
+						<div class="d-flex align-items-center d-xl-none">
+							<a class="navbar-brand" href="index.html">
+								<img class="light-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile.svg" alt="">
+								<img class="dark-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile-light.svg" alt="">
+							</a>
+						</div>
+						<!-- Logo END -->
+						<!-- Toggler for sidebar START -->
+						<div class="navbar-expand-xl sidebar-offcanvas-menu">
+							<button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="outside">
+								<i class="bi bi-text-right fa-fw h2 lh-0 mb-0 rtl-flip" data-bs-target="#offcanvasMenu"> </i>
+							</button>
+						</div>
+						<!-- Toggler for sidebar END -->
+					</div>
+				</div>
+			</nav>
+			<!-- Top bar END -->
+			<!-- Page main content START -->
+			<div class="page-content-wrapper border">
+				<h1>Create Student</h1>
+				<h5>@ViewBag.Mgs</h5>
+				<hr />
+				<div class="row">
+					<div class="col-md-6">
+						<form asp-action="Create" method="post">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							@* <div class="form-group">
+							<label asp-for="Id" class="control-label"></label>
+							<input asp-for="Id" class="form-control" />
+							<span asp-validation-for="Id" class="text-danger"></span>
+							</div> *@
+							<div class="form-group">
+								<label asp-for="Name" class="control-label"></label>
+								<input asp-for="Name" class="form-control" />
+								<span asp-validation-for="Name" class="text-danger"></span>
+							</div>
+							<br>
+							<div class="form-group">
+								<label asp-for="Email" class="control-label"></label>
+								<input asp-for="Email" class="form-control" />
+								<span asp-validation-for="Email" class="text-danger"></span>
+							</div>
+							<br>
+							<div class="form-group">
+								<label asp-for="Address" class="control-label"></label>
+								<input asp-for="Address" class="form-control" />
+								<span asp-validation-for="Address" class="text-danger"></span>
+							</div>
+							<br>
+							<div class="form-group">
+								<input type="submit" value="Create" class="btn btn-primary" />
+							</div>
+							<br>
+						</form>
+					</div>
+				</div>
+
+				<div>
+					<a asp-action="Index">Back to List</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+	<!-- Back to top -->
+	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+	<!-- Bootstrap JS -->
+	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Vendors -->
+	<script src="assets/vendor/choices/js/choices.min.js"></script>
+	<script src="assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+
+	<!-- Template Functions -->
+	<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
+
+
+
+
