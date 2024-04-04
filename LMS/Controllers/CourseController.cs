@@ -102,5 +102,9 @@ namespace LMS.Controllers
 		{
 			return View();
 		}
+		public IActionResult Allcourse()
+		{
+			return View();
+		}
 	}
 }
