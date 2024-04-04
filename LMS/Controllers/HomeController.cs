@@ -99,7 +99,7 @@ namespace LMS.Controllers
                 if (adminResult != null)
                 {
                     // Nếu tài khoản là admin, chuyển hướng đến trang index của admin
-                    return RedirectToAction("IndexLoginAmin", "Home");
+                    return RedirectToAction("IndexLoginAdmin", "Home");
                 }
 
                 // Kiểm tra trong bảng lecture nếu không tìm thấy trong bảng admin
