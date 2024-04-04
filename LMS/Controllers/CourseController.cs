@@ -94,5 +94,13 @@ namespace LMS.Controllers
             table.DeleteOne(c => c.Id == course.Id);
             return RedirectToAction("Index");
         }
+		public IActionResult Categories()
+		{
+			return View();
+		}
+		public IActionResult Single()
+		{
+			return View();
+		}
 	}
 }
