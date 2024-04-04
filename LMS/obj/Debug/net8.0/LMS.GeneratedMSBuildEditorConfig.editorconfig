@@ -82,8 +82,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginLecture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luTGVjdHVyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexNoLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleE5vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Home/LectureDashboard.cshtml]
@@ -126,8 +138,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndex.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleC5jc2h0bWw=
+[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginLecture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luTGVjdHVyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexNoLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleE5vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutLecture.cshtml]

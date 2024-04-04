@@ -10,28 +10,35 @@ namespace LMS.Controllers
 {
     public class AdminController : Controller
     {
-        private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
-        public IActionResult Index()
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Admin>("admin");
-            var admin = table.Find(FilterDefinition<Admin>.Empty).ToList();
-            return View(admin);
-        }
+		private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+		public IActionResult Index()
+		{
+			var database = client.GetDatabase("universityDtabase");
+			var table = database.GetCollection<Admin>("admin");
+			var admin = table.Find(FilterDefinition<Admin>.Empty).ToList();
+			return View(admin);
+		}
 
-        public IActionResult AdminAdd()
+		public IActionResult AdminAdd()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult AdminAdd(Admin admin)
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Admin>("admin");
-            admin.Id = Guid.NewGuid().ToString();
-            table.InsertOne(admin);
-            return RedirectToAction("Index");
-        }
+		[HttpPost]
+		public IActionResult AdminAdd(Admin admin)
+		{
+			var database = client.GetDatabase("universityDtabase");
+
+			string collectionName = "admin";
+			if (admin.Role == "Lecturer")
+			{
+				collectionName = "lecturer";
+			}
+
+			var table = database.GetCollection<Admin>(collectionName);
+			admin.Id = Guid.NewGuid().ToString();
+			table.InsertOne(admin);
+			return RedirectToAction("Index");
+		}
 
         public ActionResult Edit(string id)
         {
@@ -44,7 +51,6 @@ namespace LMS.Controllers
             }
             return View(admin);
         }
-
         [HttpPost]
         public ActionResult Edit(Admin admin)
         {
@@ -63,7 +69,7 @@ namespace LMS.Controllers
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
-            var admin = table.Find(c => c.Id ==id).FirstOrDefault();
+            var admin = table.Find(c => c.Id == id).FirstOrDefault();
             if (admin == null)
             {
                 return NotFound();
@@ -90,6 +96,6 @@ namespace LMS.Controllers
             var table = database.GetCollection<Admin>("admin");
             table.DeleteOne(c => c.Id == admin.Id);
             return RedirectToAction("Index");
-        }     
+        }
     }
 }

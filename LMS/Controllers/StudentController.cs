@@ -14,18 +14,18 @@ namespace LMS.Controllers
 
         public IActionResult Student()
         {
-            //var database = client.GetDatabase("universityDtabase");
-            //var table = database.GetCollection<Student>("student");
-            //var student = table.Find(FilterDefinition<Student>.Empty).ToList();
-            return View(/*student*/);
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Student>("student");
+            var student = table.Find(FilterDefinition<Student>.Empty).ToList();
+            return View(student);
         }
 
         public IActionResult StudentAdd()
         {
             return View();
         }
-		[HttpPost]
-        public IActionResult Create(Student student)
+        [HttpPost]
+        public IActionResult StudentAdd(Student student)
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Student>("student");
@@ -93,5 +93,5 @@ namespace LMS.Controllers
             table.DeleteOne(c => c.Id == student.Id);
             return RedirectToAction("Index");
         }
-	}
+    }
 }

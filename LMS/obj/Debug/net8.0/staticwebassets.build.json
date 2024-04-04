@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2vYdRdJC9h5SmW7n2A/L5A6+OO7bsf1hW86LZVSOFEQ=",
+  "Hash": "F+ND6GaAyc6pjaMHA8AiY7Tv5KhlFxLEHwbX67S+4mw=",
   "Source": "LMS",
   "BasePath": "_content/LMS",
   "Mode": "Default",
@@ -908,6 +908,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\avatar\\anknghe.jpg"
+    },
+    {
+      "Identity": "D:\\GROUP5SMS\\LMS\\LMS\\wwwroot\\assets\\images\\avatar\\placeholder.jpg",
+      "SourceId": "LMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GROUP5SMS\\LMS\\LMS\\wwwroot\\",
+      "BasePath": "_content/LMS",
+      "RelativePath": "assets/images/avatar/placeholder.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\avatar\\placeholder.jpg"
     },
     {
       "Identity": "D:\\GROUP5SMS\\LMS\\LMS\\wwwroot\\assets\\images\\banner\\btec.jpg",

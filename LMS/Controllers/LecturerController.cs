@@ -14,10 +14,10 @@ namespace LMS.Controllers
 
         public IActionResult AdminLecture()
         {
-            //var database = client.GetDatabase("universityDtabase");
-            //var table = database.GetCollection<Lecturer>("lecturer");
-            //var lecturers = table.Find(FilterDefinition<Lecturer>.Empty).ToList();
-            return View(/*lecturers*/);
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Lecturer>("lecturer");
+            var lecturers = table.Find(FilterDefinition<Lecturer>.Empty).ToList();
+            return View(lecturers);
         }
 		public IActionResult LecturerAdd()
 		{
@@ -29,12 +29,13 @@ namespace LMS.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Lecturer lecturer)
+        [HttpPost]
+        public IActionResult LecturerAdd(Course course)
         {
             var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Lecturer>("lecturer");
-            lecturer.Id = Guid.NewGuid().ToString();
-            table.InsertOne(lecturer);
+            var table = database.GetCollection<Course>("course");
+            course.Id = Guid.NewGuid().ToString();
+            table.InsertOne(course);
             return RedirectToAction("Index");
         }
 

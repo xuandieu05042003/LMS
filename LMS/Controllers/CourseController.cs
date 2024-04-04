@@ -13,7 +13,10 @@ namespace LMS.Controllers
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
         public IActionResult Course()
         {
-            return View();
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Course>("course");
+            var course = table.Find(FilterDefinition<Course>.Empty).ToList();
+            return View(course);
         }
 		public IActionResult CourseDetail()
 		{
@@ -24,14 +27,13 @@ namespace LMS.Controllers
 			return View();
 		}
 		[HttpPost]
-        public IActionResult Create(/*Course course*/)
+        public IActionResult CourseAdd(Course course)
         {
-            //var database = client.GetDatabase("universityDtabase");
-            //var table = database.GetCollection<Course>("course");
-            //course.Id = Guid.NewGuid().ToString();
-            //table.InsertOne(course);
-            //return RedirectToAction("Index");
-            return View();
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Course>("course");
+            course.Id = Guid.NewGuid().ToString();
+            table.InsertOne(course);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(string id)

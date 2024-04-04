@@ -189,6 +189,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\avatar\\anknghe.jpg"
     },
     {
+      "Id": "D:\\GROUP5SMS\\LMS\\LMS\\wwwroot\\assets\\images\\avatar\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\avatar\\placeholder.jpg"
+    },
+    {
       "Id": "D:\\GROUP5SMS\\LMS\\LMS\\wwwroot\\assets\\images\\banner\\btec.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\banner\\btec.jpg"
     },
