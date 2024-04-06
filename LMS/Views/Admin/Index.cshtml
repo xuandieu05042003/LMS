@@ -201,7 +201,7 @@
 						data-bs-dismiss="modal">
 					No
 				</button>
-				<button type="button" class="btn btn-primary">Yes</button>
+				<button type="button" class="btn btn-primary" >Yes</button>
 			</div>
 		</div>
 	</div>
@@ -255,7 +255,7 @@
                             <!-- Table head -->
                             <thead>
                                 <tr>
-                                    <th scope="col" class="text border-0 rounded-start">Name</th>
+									<th scope="col" class="text border-0 rounded-start">Name</th>
                                     <th scope="col" class="text border-0 rounded-start">Phone</th>
                                     <!-- <th scope="col" class="border-0">Progress</th> -->
                                     <!-- <th scope="col" class="border-0">Courses</th> -->
@@ -270,7 +270,20 @@
                                 {
                                     <tr>
                                         <td>
-                                            @items.Name
+											<div class="d-flex align-items-center position-relative">
+												<!-- Image -->
+												<div class="avatar avatar-md">
+													<img src="~/assets/images/avatar/09.jpg" class="rounded-circle" alt>
+												</div>
+												<div class="mb-0 ms-3">
+													<!-- Title -->
+													<h6 class="mb-0">
+														<a href="#" class="stretched-link">
+															@items.Name
+														</a>
+													</h6>
+												</div>
+											</div>
                                         </td>
                                         <td>
                                             @items.Phone
@@ -285,11 +298,10 @@
                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
-                                            <button class="btn btn-light btn-round mb-0"
-                                                    data-bs-toggle="modal" data-bs-placement="top" title="Delete"
-                                                    data-bs-target="#exampleDelete">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
+                                            <a class="btn btn-light btn-round mb-0"
+													type="submit" asp-action="Delete" asp-route-id="@items.Id">
+												<i class="bi bi-trash"></i>
+                                            </a>
                                         </td>
                                         @*<td>
                                             <a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail">
@@ -344,5 +356,4 @@
     </div>
 </div>
 <!-- Page main content END -->
-
 

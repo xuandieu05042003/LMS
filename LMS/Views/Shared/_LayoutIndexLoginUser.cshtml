@@ -42,17 +42,7 @@
 	</head>
 
 	<body>
-		<script>
-      window.onload = function () {
-        // Kiểm tra trạng thái đăng nhập
-        var loggedIn = localStorage.getItem("loggedIn");
 
-        if (loggedIn) {
-          document.getElementById("loginForm").style.display = "none";
-          document.getElementById("profile").style.display = "block";
-        }
-      };
-    </script>
 
 		<!-- Top alert START -->
 		<!-- <div class="container">
@@ -193,7 +183,7 @@
 							</a>
 						</li>
 						<li>
-							<a class="dropdown-item bg-danger-soft-hover" href="#">
+							<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("Login", "Home")">
 								<i class="bi bi-power fa-fw me-2"></i>Sign Out
 							</a>
 						</li>
