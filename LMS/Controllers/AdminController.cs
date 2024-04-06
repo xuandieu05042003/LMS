@@ -1,30 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using MongoDB.Driver;
 using LMS.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace LMS.Controllers
 {
     public class AdminController : Controller
     {
-        private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+        private readonly MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+
         public IActionResult Index()
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
-            var admin = table.Find(FilterDefinition<Admin>.Empty).ToList();
-            return View(admin);
+            var admins = table.Find(FilterDefinition<Admin>.Empty).ToList();
+            return View(admins);
         }
 
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Create(Admin admin)
+        public IActionResult Create(Admin admin, IFormFile Image)
         {
             var database = client.GetDatabase("universityDtabase");
 
@@ -36,6 +39,20 @@ namespace LMS.Controllers
 
             var table = database.GetCollection<Admin>(collectionName);
             admin.Id = Guid.NewGuid().ToString();
+
+            if (Image != null)
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    Image.CopyTo(memoryStream);
+                    admin.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+            else
+            {
+                admin.Image = "";
+            }
+
             table.InsertOne(admin);
             return RedirectToAction("Index");
         }
@@ -51,8 +68,9 @@ namespace LMS.Controllers
             }
             return View(admin);
         }
+
         [HttpPost]
-        public ActionResult Edit(Admin admin)
+        public ActionResult Edit(Admin admin, IFormFile Image)
         {
             if (string.IsNullOrEmpty(admin.Id))
             {
@@ -61,11 +79,21 @@ namespace LMS.Controllers
             }
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
+
+            if (Image != null)
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    Image.CopyTo(memoryStream);
+                    admin.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+
             table.ReplaceOne(c => c.Id == admin.Id, admin);
             return RedirectToAction("Index");
         }
 
-        public ActionResult Details(String id)
+        public ActionResult Details(string id)
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
@@ -96,6 +124,6 @@ namespace LMS.Controllers
             var table = database.GetCollection<Admin>("admin");
             table.DeleteOne(c => c.Id == admin.Id);
             return RedirectToAction("Index");
-        }     
+        }
     }
 }
