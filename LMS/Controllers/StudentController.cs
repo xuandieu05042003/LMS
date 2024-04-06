@@ -34,7 +34,7 @@ namespace LMS.Controllers
             //ViewBag.Mgs = "Student has been saved.";
             return RedirectToAction("Index");
         }
-
+        
         public ActionResult Edit(string id)
         {
             var database = client.GetDatabase("universityDtabase");
@@ -92,6 +92,41 @@ namespace LMS.Controllers
             var table = database.GetCollection<Student>("student");
             table.DeleteOne(c => c.Id == student.Id);
             return RedirectToAction("Index");
+        }
+        public IActionResult StudentLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult StudentLogin(Student student)
+        {
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Student>("student");
+            var user = table.AsQueryable<Student>().FirstOrDefault(s => s.Email == student.Email && s.Password == student.Password);
+            if (user != null)
+            {
+                // Authentication successful, redirect to student dashboard or home page
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Loginfail = "Invalid username or password";
+                return View();
+            }
+        }
+        public IActionResult StudentRegister()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult StudentRegister(Student student)
+        {
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Student>("student");
+            student.Id = Guid.NewGuid().ToString();
+            table.InsertOne(student);
+            //ViewBag.Mgs = "Student has been saved.";
+            return RedirectToAction("IndexLoginUser", "Home");
         }
     }
 }

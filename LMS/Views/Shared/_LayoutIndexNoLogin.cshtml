@@ -113,16 +113,26 @@
 						<!-- Nav Main menu START -->
 						<ul class="navbar-nav navbar-nav-scroll mx-auto">
 							<!-- Nav item 1 Courses -->
-							<li class="nav-item"><a class="nav-link"
-									href="./courses.html">All Courses</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./courses-categories.html">Catagories</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./help-center.html">Help Center</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./about-us.html">About Us</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./FAQs.html">FAQs</a></li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("Allcourse", "Course")">All Courses</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("Categories", "Course")">Catagories</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("help_center", "Home")">Help Center</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("About", "Home")">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("FAQs", "Home")">FAQs</a>
+						</li>
 						</ul>
 						<!-- Nav Main menu END -->
 
@@ -189,7 +199,7 @@
 							<a href="@Url.Action("Login", "Home")" class="dropdown-item">Sign in</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="./sign-up.html">Sign up</a>
+							<a class="dropdown-item" href="@Url.Action("StudentRegister", "Student")">Sign up</a>
 							</li>
 							<li><hr class="dropdown-divider" /></li>
 							<!-- Dark mode options START -->
@@ -505,7 +515,7 @@
 							<!-- Google play store button -->
 							<div class="col-6 col-sm-4 col-md-3 col-lg-6">
 								<a href="#">
-									<img src="~/assets/images/client/google-play.svg" alt />
+									<img src="~/assets/images/client/google-play.svg" />
 								</a>
 							</div>
 							<!-- App store button -->
@@ -561,20 +571,20 @@
 													<a class="dropdown-item me-4" href="#"><img
 															class="fa-fw me-2"
 															src="~/assets/images/flags/uk.svg"
-															alt />English</a>
+															 />English</a>
 												</li>
 												<li>
 													<a class="dropdown-item me-4" href="#"><img
 															class="fa-fw me-2"
 															src="~/assets/images/flags/gr.svg"
-															alt />German
+															 />German
 													</a>
 												</li>
 												<li>
 													<a class="dropdown-item me-4" href="#"><img
 															class="fa-fw me-2"
 															src="~/assets/images/flags/sp.svg"
-															alt />French</a>
+															 />French</a>
 												</li>
 											</ul>
 										</div>

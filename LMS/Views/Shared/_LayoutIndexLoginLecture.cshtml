@@ -113,16 +113,25 @@
 						<!-- Nav Main menu START -->
 						<ul class="navbar-nav navbar-nav-scroll mx-auto">
 							<!-- Nav item 1 Courses -->
-							<li class="nav-item"><a class="nav-link"
-									href="./courses.html">All Courses</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./courses-categories.html">Catagories</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./help-center.html">Help Center</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./about-us.html">About Us</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./FAQs.html">FAQs</a></li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("Allcourse", "Course")">All Courses</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("Categories", "Course")">Catagories</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("help_center", "Home")">Help Center</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("About", "Home")">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"
+							   href="@Url.Action("FAQs", "Home")">FAQs</a>
 						</ul>
 						<!-- Nav Main menu END -->
 
@@ -194,7 +203,7 @@
 							</a>
 						</li>
 						<li>
-							<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("Login", "Home")">
+							<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("IndexNoLogin", "Home")">
 								<i class="bi bi-power fa-fw me-2"></i>Sign Out
 							</a>
 						</li>

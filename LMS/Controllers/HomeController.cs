@@ -84,6 +84,7 @@ namespace LMS.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         [HttpPost]
 		public async Task<IActionResult> Login(string email, string password)
 		{
@@ -91,6 +92,27 @@ namespace LMS.Controllers
 			{
 				var client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
 				var database = client.GetDatabase("universityDtabase");
+=======
+		public IActionResult About()
+		{
+			return View();
+		}
+		public IActionResult help_center()
+		{
+			return View();
+		}
+		public IActionResult FAQs()
+		{
+			return View();
+		}
+		[HttpPost]
+        public async Task<IActionResult> Login(string email, string password)
+        {
+            try
+            {
+                var client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+                var database = client.GetDatabase("universityDtabase");
+>>>>>>> a46df445d2c6e3e2fec921619f0689c584f06caf
 
 				// Kiểm tra trong bảng admin
 				var adminCollection = database.GetCollection<Admin>("admin");
