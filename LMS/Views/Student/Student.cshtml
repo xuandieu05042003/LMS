@@ -1,4 +1,6 @@
-﻿@model IEnumerable<LMS.Models.Student>
+﻿
+@model IEnumerable<LMS.Models.Student>
+
 
 @{
     ViewData["Title"] = "Student";
@@ -10,178 +12,69 @@
 	 aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel">
-					Edit stuent
-					information
-				</h1>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-			</div>
-			<div class="modal-body d-flex">
-				<div class="col-2 g-2 shadow-lg" style=" border-radius: 6px">
-					<img src="~/assets/images/avatar/651.png"
-						 class="img-fluid w-500px rounded" alt="...">
+			<!-- Edit profile START -->
+			<div class="card bg-transparent border rounded-3">
+				<!-- Card header -->
+				<div class="card-header bg-transparent border-bottom">
+					<h3 class="card-header-title mb-0">Details</h3>
 				</div>
-				<form class="col row ps-3 g-3">
-					<div class="col-md-4">
-						<label for="name" class="form-label">
-							Lecturers name <span class="text-danger">*</span>
-						</label>
-						<input type="name" class="form-control" id="email">
-					</div>
-					<div class="col-md-2">
-						<label for="gender" class="form-label">
-							Gender <span class="text-danger">*</span>
-						</label>
-						<select class="form-select" aria-label="Default select example">
-							<option selected>Choose</option>
-							<option value="1">Male</option>
-							<option value="2">Female</option>
-						</select>
-					</div>
-					<div class="col-md-6">
-						<label for="dob" class="form-label">
-							Date of birth <span class="text-danger">*</span>
-						</label>
-						<div class="col-lg-8">
-							<div class="row g-2 g-sm-4">
-								<div class="col-4">
-									<select class="form-select js-choice z-index-9 border-0 bg-light"
-											aria-label=".form-select-sm">
-										<option>Date</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
-										<option>13</option>
-										<option>14</option>
-										<option>15</option>
-										<option>16</option>
-										<option>17</option>
-										<option>18</option>
-										<option>19</option>
-										<option>20</option>
-										<option>21</option>
-										<option>22</option>
-										<option>23</option>
-										<option>24</option>
-										<option>25</option>
-										<option>26</option>
-										<option>27</option>
-										<option>28</option>
-										<option>29</option>
-										<option>30</option>
-										<option>31</option>
-									</select>
-								</div>
-								<div class="col-4">
-									<select class="form-select js-choice z-index-9 border-0 bg-light"
-											aria-label=".form-select-sm">
-										<option>Month</option>
-										<option>Jan</option>
-										<option>Feb</option>
-										<option>Mar</option>
-										<option>Apr</option>
-										<option>Jun</option>
-										<option>Jul</option>
-										<option>Aug</option>
-										<option>Sep</option>
-										<option>Oct</option>
-										<option>Nov</option>
-										<option>Dec</option>
-									</select>
-								</div>
-								<div class="col-4">
-									<select class="form-select js-choice z-index-9 border-0 bg-light"
-											aria-label=".form-select-sm">
-										<option>Year</option>
-										<option>1990</option>
-										<option>1991</option>
-										<option>1992</option>
-										<option>1993</option>
-										<option>1994</option>
-										<option>1995</option>
-										<option>1996</option>
-										<option>1997</option>
-										<option>1998</option>
-										<option>1999</option>
-										<option>2000</option>
-										<option>2001</option>
-										<option>2002</option>
-										<option>2003</option>
-										<option>2004</option>
-										<option>2005</option>
-									</select>
-								</div>
-							</div>
+				<!-- Card body START -->
+				<div class="card-body">
+					<!-- Form -->
+					<h1>Student Details</h1>
+
+					@* <form class="row g-4">
+						<!-- Full name -->
+						<div class="col-md-6">
+							<label class="form-label">Full Name</label>
+							<input class="form-control" type="text" value="@Model.Name">
 						</div>
-					</div>
-					<div class="col-4">
-						<label for="name" class="form-label">Phone number</label>
-						<input type="phone" class="form-control" id="name">
-					</div>
-					<div class="col-7">
-						<label for="address" class="form-label">
-							Address <span class="text-danger">*</span>
-						</label>
-						<input type="text" class="form-control" id="address">
-					</div>
-					<div class="col-10 mb-1">
-						<hr>
-						<h6 class="mb-0">Educational information</h6>
-					</div>
-					<div class="col-md-4">
-						<label for="school" class="form-label">
-							School <span class="text-danger">*</span>
-						</label>
-						<select class="form-select" aria-label="Default select example">
-							<option selected>Select school</option>
-							<option value="1">FPT University</option>
-							<option value="2">Greenwich Vietnam</option>
-							<option value="3">FPT Polytechnic</option>
-							<option value="4">BTEC FPT British College</option>
-							<option value="5">Melbourne Polytechnic</option>
-						</select>
-					</div>
-					<div class="col-3">
-						<label for="studentID" class="form-label">
-							Lecturers ID <span class="text-danger">*</span>
-						</label>
-						<input type="text" class="form-control" id="ID">
-					</div>
-					<div class="col-4">
-						<label for="email" class="form-label">
-							School issued email <span class="text-danger">*</span>
-						</label>
-						<input type="email" class="form-control" id="email">
 
-					</div>
+						<!-- Birthday -->
+						<div class="col-md-6">
+							<label class="form-label">Birthday</label>
+							<input class="form-control" type="text" value="@Model.Birthday">
+						</div>
 
-				</form>
+						<!-- Phone number -->
+						<div class="col-md-6">
+							<label class="form-label">Phone Number</label>
+							<input class="form-control" type="text" value="@Model.Phone">
+						</div>
+
+						<!-- Email -->
+						<div class="col-md-6">
+							<label class="form-label">Email</label>
+							<input class="form-control" type="email" value="@Model.Email">
+						</div>
+
+						<!-- Address -->
+						<div class="col-md-6">
+							<label class="form-label">Address</label>
+							<input class="form-control" type="text" value="@Model.Address">
+						</div>
+
+						<!-- Role -->
+						<div class="col-md-6">
+							<label class="form-label">Role</label>
+							<input class="form-control" type="text" value="@Model.Role">
+						</div>
+
+						<!-- Password (for display purposes only, do not include in a real form) -->
+						<div class="col-md-6">
+							<label class="form-label">Password (for display purposes only)</label>
+							<input class="form-control" type="text" value="@Model.Password">
+						</div>
+
+						<!-- Save button -->
+						<div class="d-sm-flex justify-content-end">
+							<button type="button" class="btn btn-primary mb-0">Save Changes</button>
+						</div>
+					</form> *@
+				</div>
+				<!-- Card body END -->
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" id="editButton"
-						onclick="edit()">
-					Edit
-				</button>
-				<button type="button" class="btn btn-secondary" id="closeButton"
-						style="display: none;" data-bs-dismiss="modal">
-					Close
-				</button>
-				<button type="button" class="btn btn-primary" id="saveButton"
-						style="display: none;" onclick="saveChanges()">
-					Save changes
-				</button>
-			</div>
+			<!-- Edit profile END -->
 		</div>
 	</div>
 </div>
@@ -233,10 +126,6 @@
 						</button>
 					</form>
 				</div>
-
-				<div class="col-md-2">
-					<a type="button" href="@Url.Action("StudentAdd", "Student")" class="btn btn-info mb-0">Add new student</a>
-				</div>
 			</div>
 			<!-- Search and select END -->
 		</div>
@@ -272,7 +161,7 @@
 								{
 									<tr>
 										<td>
-											@items.StudentName
+											@items.Name
 										</td>
 										<td>
 											@items.Birthday
@@ -283,11 +172,12 @@
 										<td>
 											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
 											   data-bs-toggle="modal" data-bs-placement="top" title="Detail"
-											   data-bs-target="#exampleModal">
+                                               data-bs-target="#exampleModal">
 												<i class="bi bi-eye"></i>
 											</a>
 											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-											   data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+											   data-bs-toggle="modal" data-bs-placement="top" title="Edit"
+											   >
 												<i class="bi bi-pencil"></i>
 											</a>
 											<button class="btn btn-light btn-round mb-0"

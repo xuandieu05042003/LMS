@@ -63,7 +63,7 @@
 
                         <!-- Menu item 1 -->
                         <li class="nav-item">
-                            <a href="admin-dashboard.html" class="nav-link active">
+							<a href="@Url.Action("AdminDashboard", "Home")" class="nav-link active">
                                 <i class="bi bi-house fa-fw me-2"></i>Dashboard
                             </a>
                         </li>
@@ -169,10 +169,10 @@
                                 <a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
                                     <i class="bi bi-gear-fill"></i>
                                 </a>
-								<a class="h5 mb-0 text-body" href="@Url.Action("IndexLoginAdmin", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
+								<a class="h5 mb-0 text-body" href="@Url.Action("IndexLogin", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
                                     <i class="bi bi-globe"></i>
                                 </a>
-                                <a class="h5 mb-0 text-body" href="sign-in.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign out">
+								<a class="h5 mb-0 text-body" href="@Url.Action("Login", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign out">
                                     <i class="bi bi-power"></i>
                                 </a>
                             </div>
@@ -372,7 +372,7 @@
 									   role="button" data-bs-auto-close="outside" data-bs-display="static"
 									   data-bs-toggle="dropdown" aria-expanded="false">
 										<img class="avatar-img rounded-circle"
-											 src="~/assets/images/avatar/651.png" alt="avatar">
+											 src="~/assets/images/avatar/placeholder.jpg" alt="avatar">
 									</a>
 
 									<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
@@ -383,11 +383,11 @@
 												<!-- Avatar -->
 												<div class="avatar me-3">
 													<img class="avatar-img rounded-circle shadow"
-														 src="~/assets//images/avatar/651.png" alt="avatar">
+														 src="~/assets/images/avatar/placeholder.jpg" alt="avatar">
 												</div>
 												<div>
-													<a class="h6" href="#">Pham Trung Nghia</a>
-													<p class="small m-0">nghiapt@fe.edu.vn</p>
+													<a class="h6" href="#">@ViewBag.Name</a>
+													<p class="small m-0">@ViewBag.Email</p>
 												</div>
 											</div>
 										</li>

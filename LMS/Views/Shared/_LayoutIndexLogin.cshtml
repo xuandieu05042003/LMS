@@ -42,8 +42,6 @@
 	</head>
 
 	<body>
-
-
 		<!-- Top alert START -->
 		<!-- <div class="container">
     <div
@@ -70,7 +68,7 @@
 			<nav class="navbar navbar-expand-xl">
 				<div class="container">
 					<!-- Logo START -->
-				<a class="navbar-brand" href="@Url.Action("IndexLoginUser", "Home")">
+					<a class="navbar-brand" href="@Url.Action("IndexLogin", "Home")">
 						<img
 							class="light-mode-item navbar-brand-item"
 							src="~/assets/images/FPTEdu.png"
@@ -101,8 +99,8 @@
 					<!-- Main navbar START -->
 					<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
 						<!-- Nav Main menu START -->
-					<ul class="navbar-nav navbar-nav-scroll mx-auto">
-						<!-- Nav item 1 Courses -->
+						<ul class="navbar-nav navbar-nav-scroll mx-auto">
+							<!-- Nav item 1 Courses -->
 						<li class="nav-item">
 							<a class="nav-link"
 							   href="@Url.Action("Allcourse", "Course")">All Courses</a>
@@ -122,8 +120,7 @@
 						<li class="nav-item">
 							<a class="nav-link"
 							   href="@Url.Action("FAQs", "Home")">FAQs</a>
-						</li>
-					</ul>
+						</ul>
 						<!-- Nav Main menu END -->
 
 						<!-- Nav Search START -->
@@ -151,8 +148,7 @@
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
 					   role="button" data-bs-auto-close="outside" data-bs-display="static"
 					   data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="avatar-img rounded-circle" src="~/assets/images/avatar/651.png"
-							 alt="avatar">
+						<img class="avatar-img rounded-circle" src="data:image;base64,@ViewBag.Image" alt="avatar" class="rounded-circle" />
 					</a>
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
 						aria-labelledby="profileDropdown">
@@ -161,27 +157,38 @@
 							<div class="d-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar me-3">
-									<img class="avatar-img rounded-circle shadow"
-										 src="~/assets/images/avatar/651.png" alt="avatar">
+									<img class="avatar-img rounded-circle shadow"  src="data:image;base64,@ViewBag.Image" alt="Admin Image" class="rounded-circle" />
 								</div>
-								<div>
-									<a class="h6" href="#">Pham Trung Nghia</a>
-									<p class="small m-0">nghiapt@fe.edu.vn</p>
+								<div>									
+									<a class="h6" href="#">@ViewBag.Name</a>
+									<p class="small m-0">@ViewBag.Email</p>
 								</div>
 							</div>
 						</li>
 						<li> <hr class="dropdown-divider"></li>
 						<!-- Links -->
-						@* <li>
-							<a href="./admin-dashboard.html" class="dropdown-item">
-								<i class="bi bi-person-lock fa-fw me-2"></i>DashBoard
-							</a>
-						</li>
+						@if (@ViewBag.Role == "Admin")
+						{
+							<li>
+								<a href="@Url.Action("AdminDashboard", "Home")" class="dropdown-item">
+									<i class="bi bi-person-lock fa-fw me-2"></i>DashBoard
+								</a>
+							</li>
+						}
+						else if (@ViewBag.Role == "Lecturer")
+						{
+
+							<li>
+								<a href="@Url.Action("LectureDashboard", "Home")" class="dropdown-item">
+									<i class="bi bi-person-lock fa-fw me-2"></i>DashBoard
+								</a>
+							</li>
+						}
 						<li>
 							<a class="dropdown-item" href="#">
 								<i class="bi bi-person fa-fw me-2"></i>Edit Profile
 							</a>
-						</li> *@
+						</li>
 						<li>
 							<a class="dropdown-item" href="#">
 								<i class="bi bi-gear fa-fw me-2"></i>Account Settings
@@ -193,11 +200,7 @@
 							</a>
 						</li>
 						<li>
-<<<<<<< HEAD
-							<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("Login", "Home")">
-=======
 							<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("IndexNoLogin", "Home")">
->>>>>>> a46df445d2c6e3e2fec921619f0689c584f06caf
 								<i class="bi bi-power fa-fw me-2"></i>Sign Out
 							</a>
 						</li>

@@ -20,48 +20,35 @@ namespace LMS.Controllers
             return View(student);
         }
 
-        public IActionResult StudentAdd()
-        {
-            return View();
-        }
         [HttpPost]
-        public IActionResult StudentAdd(Student student)
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            student.Id = Guid.NewGuid().ToString();
-            table.InsertOne(student);
-            //ViewBag.Mgs = "Student has been saved.";
-            return RedirectToAction("Index");
-        }
-        
-        public ActionResult Edit(string id)
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            var student = table.Find(c => c.Id == id).FirstOrDefault();
-            if (student == null)
-            {
-                return NotFound();
-            }
-            return View(student);
-        }
+		public ActionResult Edit(string id)
+		{
+			var database = client.GetDatabase("universityDtabase");
+			var table = database.GetCollection<Student>("student");
+			var student = table.Find(c => c.Id == id).FirstOrDefault();
+			if (student == null)
+			{
+				return NotFound();
+			}
+			return View(student);
+		}
 
-        [HttpPost]
-        public ActionResult Edit(Student student)
-        {
-            if (string.IsNullOrEmpty(student.Id))
-            {
-                ViewBag.Mgs = "Please provide id";
-                return View(student);
-            }
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            table.ReplaceOne(c => c.Id == student.Id, student);
-            return RedirectToAction("Index");
-        }
+		[HttpPost]
+		public ActionResult Edit(Student student)
+		{
+			if (string.IsNullOrEmpty(student.Id))
+			{
+				ViewBag.Mgs = "Please provide id";
+				return View(student);
+			}
+			var database = client.GetDatabase("universityDtabase");
+			var table = database.GetCollection<Student>("student");
+			table.ReplaceOne(c => c.Id == student.Id, student);
+			return RedirectToAction("Student");
+		}
 
-        public ActionResult Details(String id)
+
+		public ActionResult Details(String id)
         {
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Student>("student");
@@ -126,7 +113,7 @@ namespace LMS.Controllers
             student.Id = Guid.NewGuid().ToString();
             table.InsertOne(student);
             //ViewBag.Mgs = "Student has been saved.";
-            return RedirectToAction("IndexLoginUser", "Home");
+            return RedirectToAction("Login", "Home");
         }
     }
 }

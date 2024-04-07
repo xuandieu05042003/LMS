@@ -34,48 +34,142 @@ namespace LMS.Controllers
 		{
 			return View();
 		}
-        public IActionResult IndexLoginAdmin()
+        public IActionResult IndexLogin()
         {
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+			var adminImage = HttpContext.Session.GetString("AdminImage");
+
+			// session for lecture
+			var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) &&!string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+            {
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+				ViewBag.Image = adminImage;
+			}
+            else if (!string.IsNullOrEmpty(lecturerName) &&!string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid session";
+            }
+
             return View();
         }
-		public IActionResult IndexLoginLecture()
-		{
-			return View();
-		}
-		public IActionResult IndexLoginUser()
-		{
-			return View();
-		}
-		//public IActionResult IndexLoginUser()
-		//{
-		//	return View();
-		//}
-		//public IActionResult IndexLoginUser()
-		//{
-		//	return View();
-		//}
-		//public IActionResult IndexLoginUser()
-		//{
-		//	return View();
-		//}
-		//public IActionResult IndexLoginUser()
-		//{
-		//	return View();
-		//}
-		//public IActionResult IndexLoginUser()
-		//{
-		//	return View();
-		//}
-
 
 		// Dashboard
 		public IActionResult AdminDashboard()
 		{
+			// session for admin
+			var adminName = HttpContext.Session.GetString("AdminName");
+			var adminRole = HttpContext.Session.GetString("AdminRole");
+			var adminEmail = HttpContext.Session.GetString("AdminEmail");
+			var adminImage = HttpContext.Session.GetString("AdminImage");
+
+			// session for lecture
+			var lecturerName = HttpContext.Session.GetString("LecturerName");
+			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+			// session for student
+			var studentName = HttpContext.Session.GetString("StudentName");
+			var studentRole = HttpContext.Session.GetString("StudentRole");
+			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+			// 
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			{
+				ViewBag.Name = adminName;
+				ViewBag.Role = adminRole;
+				ViewBag.Email = adminEmail;
+				ViewBag.Image = adminImage;
+			}
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			{
+				ViewBag.Name = lecturerName;
+				ViewBag.Role = lecturerRole;
+				ViewBag.Email = lecturerEmail;
+			}
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			{
+				ViewBag.Name = studentName;
+				ViewBag.Role = studentRole;
+				ViewBag.Email = studentEmail;
+			}
+			else
+			{
+				ViewBag.ErrorMessage = "Invalid session";
+			}
+
 			return View();
 		}
 
 		public IActionResult LectureDashboard()
         {
+			// session for admin
+			var adminName = HttpContext.Session.GetString("AdminName");
+			var adminRole = HttpContext.Session.GetString("AdminRole");
+			var adminEmail = HttpContext.Session.GetString("AdminEmail");
+			var adminImage = HttpContext.Session.GetString("AdminImage");
+
+			// session for lecture
+			var lecturerName = HttpContext.Session.GetString("LecturerName");
+			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+			// session for student
+			var studentName = HttpContext.Session.GetString("StudentName");
+			var studentRole = HttpContext.Session.GetString("StudentRole");
+			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+			// 
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			{
+				ViewBag.Name = adminName;
+				ViewBag.Role = adminRole;
+				ViewBag.Email = adminEmail;
+				ViewBag.Image = adminImage;
+			}
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			{
+				ViewBag.Name = lecturerName;
+				ViewBag.Role = lecturerRole;
+				ViewBag.Email = lecturerEmail;
+			}
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			{
+				ViewBag.Name = studentName;
+				ViewBag.Role = studentRole;
+				ViewBag.Email = studentEmail;
+			}
+			else
+			{
+				ViewBag.ErrorMessage = "Invalid session";
+			}
+
 			return View();
 		}
 
@@ -84,27 +178,6 @@ namespace LMS.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-        [HttpPost]
-		public async Task<IActionResult> Login(string email, string password)
-		{
-			try
-			{
-				var client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
-				var database = client.GetDatabase("universityDtabase");
-=======
-		public IActionResult About()
-		{
-			return View();
-		}
-		public IActionResult help_center()
-		{
-			return View();
-		}
-		public IActionResult FAQs()
-		{
-			return View();
-		}
 		[HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
@@ -112,52 +185,64 @@ namespace LMS.Controllers
             {
                 var client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
                 var database = client.GetDatabase("universityDtabase");
->>>>>>> a46df445d2c6e3e2fec921619f0689c584f06caf
 
-				// Kiểm tra trong bảng admin
-				var adminCollection = database.GetCollection<Admin>("admin");
-				var adminFilter = Builders<Admin>.Filter.Where(x => x.Email == email && x.Password == password);
-				var adminResult = await adminCollection.Find(adminFilter).FirstOrDefaultAsync();
-				if (adminResult != null)
-				{
-					// Nếu tài khoản là admin, chuyển hướng đến trang index của admin
-					return RedirectToAction("IndexLoginAdmin", "Home");
-				}
+                var adminCollection = database.GetCollection<Admin>("admin");
+                var adminFilter = Builders<Admin>.Filter.Where(x => x.Email == email && x.Password == password);
+                var adminResult = await adminCollection.Find(adminFilter).FirstOrDefaultAsync();
+                if (adminResult != null)
+                {
+                    HttpContext.Session.SetString("AdminName", adminResult.Name);
+                    HttpContext.Session.SetString("AdminRole", adminResult.Role);
+                    HttpContext.Session.SetString("AdminEmail", adminResult.Email);
+					HttpContext.Session.SetString("AdminImage", adminResult.Image);
+					return RedirectToAction("IndexLogin", "Home");
+                }
 
-				// Kiểm tra trong bảng lecture nếu không tìm thấy trong bảng admin
-				var lecturerCollection = database.GetCollection<Lecturer>("lecturer");
-				var lecturerFilter = Builders<Lecturer>.Filter.Where(x => x.Email == email && x.Password == password);
-				var lecturerResult = await lecturerCollection.Find(lecturerFilter).FirstOrDefaultAsync();
-				if (lecturerResult != null)
-				{
-					// Nếu tài khoản là lecture, chuyển hướng đến trang index của lecture
-					return RedirectToAction("IndexLoginLecture", "Home");
-				}
+                var lecturerCollection = database.GetCollection<Lecturer>("lecturer");
+                var lecturerFilter = Builders<Lecturer>.Filter.Where(x => x.Email == email && x.Password == password);
+                var lecturerResult = await lecturerCollection.Find(lecturerFilter).FirstOrDefaultAsync();
+                if (lecturerResult != null)
+                {
+                    HttpContext.Session.SetString("LecturerName", lecturerResult.Name);
+                    HttpContext.Session.SetString("LecturerRole", lecturerResult.Role);
+                    HttpContext.Session.SetString("LecturerEmail", lecturerResult.Email);
+                    return RedirectToAction("IndexLogin", "Home");
+                }
 
-				// Kiểm tra trong bảng student nếu không tìm thấy trong bảng admin và lecture
 				var studentCollection = database.GetCollection<Student>("student");
 				var studentFilter = Builders<Student>.Filter.Where(x => x.Email == email && x.Password == password);
 				var studentResult = await studentCollection.Find(studentFilter).FirstOrDefaultAsync();
 				if (studentResult != null)
 				{
-					// Nếu tài khoản là student, chuyển hướng đến trang index của student
-					return RedirectToAction("IndexLoginUser", "Home");
+					HttpContext.Session.SetString("StudentName", studentResult.Name);
+					HttpContext.Session.SetString("StudentRole", studentResult.Role);
+					HttpContext.Session.SetString("StudentEmail", studentResult.Email);
+					return RedirectToAction("IndexLogin", "Home");
 				}
 
-				// Nếu không tìm thấy tài khoản trong bất kỳ bảng nào, hiển thị thông báo lỗi
 				ViewBag.ErrorMessage = "Invalid email or password.";
-				return View(); // Trả về view đăng nhập với thông báo lỗi
-			}
-			catch (Exception ex)
-			{
-				// Xử lý ngoại lệ
-				Console.WriteLine($"An error occurred: {ex.Message}");
-				return View(); // Trả về view đăng nhập với thông báo lỗi
-			}
-		}
+                return View();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return View();
+            }
+        }
 
-		public IActionResult Logout()
+
+        public IActionResult Logout()
         {
+			//// delete session saved
+			//HttpContext.Session.Remove("AdminId");
+			//HttpContext.Session.Remove("AdminRole");
+			//HttpContext.Session.Remove("AdminEmail");
+			//HttpContext.Session.Remove("LecturerId");
+			//HttpContext.Session.Remove("LecturerRole");
+			//HttpContext.Session.Remove("LecturerEmail");
+			//HttpContext.Session.Remove("StudentId");
+			//HttpContext.Session.Remove("StudentRole");
+			//HttpContext.Session.Remove("StudentEmail");
 			// Chuyển hướng đến trang đăng nhập
 			return RedirectToAction("Login");
 		}

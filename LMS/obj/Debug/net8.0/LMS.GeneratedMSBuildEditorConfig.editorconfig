@@ -106,16 +106,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxoZWxwX2NlbnRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginAdmin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luQWRtaW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginLecture.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luTGVjdHVyZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLoginUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luVXNlci5jc2h0bWw=
+[D:/GROUP5SMS/LMS/LMS/Views/Home/IndexLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Home/IndexNoLogin.cshtml]
@@ -162,16 +154,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginAdmin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luQWRtaW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginLecture.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luTGVjdHVyZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLoginUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luVXNlci5jc2h0bWw=
+[D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutIndexNoLogin.cshtml]

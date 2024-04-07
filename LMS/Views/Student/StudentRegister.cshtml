@@ -30,10 +30,10 @@
 						<form asp-action="StudentRegister" method="post">
 							<!-- Student Name-->
 							<div class="mb-4">
-								<label asp-for="StudentName" class="form-label">Student Name *</label>
+								<label asp-for="Name" class="form-label">Student Name *</label>
 								<div class="input-group input-group-lg">
-									<span asp-validation-for="StudentName" class="input-group-text bg-light rounded-start border-0 text-secondary px-3"></span>
-									<input asp-for="StudentName" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Student Name" id="exampleInputEmail1">
+									<span asp-validation-for="Name" class="input-group-text bg-light rounded-start border-0 text-secondary px-3"></span>
+									<input asp-for="Name" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Student Name" id="exampleInputEmail1">
 								</div>
 							</div>
 							<!-- Birthday -->
@@ -76,6 +76,14 @@
 									<input asp-for="Password" type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword5">
 								</div>
 							</div>
+							<!-- Role -->
+							<div class="form-group">
+								<label asp-for="Role" class="control-label"></label>
+								<select asp-for="Role" class="form-control">
+									<option value="Student">Student</option>
+								</select>
+								<span asp-validation-for="Role" class="text-danger"></span>
+							</div>
 							<!-- Check box -->
 							<div class="mb-4">
 								<div class="form-check">
@@ -110,7 +118,7 @@
 
 						<!-- Sign up link -->
 						<div class="mt-4 text-center">
-							<span>Already have an account?<a href="@Url.Action("Login", "Student")"> Sign in here</a></span>
+							<span>Already have an account?<a href="@Url.Action("Login", "Home")"> Sign in here</a></span>
 						</div>
 					</div>
 				</div>
