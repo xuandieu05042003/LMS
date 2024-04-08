@@ -369,5 +369,9 @@ namespace LMS.Controllers
 			table.DeleteOne(c => c.Id == admin.Id);
 			return RedirectToAction("Index");
 		}
+		public IActionResult AdminSetting()
+		{
+			return View();
+		}
 	}
 }
