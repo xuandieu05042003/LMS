@@ -294,9 +294,10 @@ namespace LMS.Controllers
             //ViewBag.Mgs = "Student has been saved.";
             return RedirectToAction("Login", "Home");
         }
-		public IActionResult StudentSetting()
-		{
-			return View();
+        public IActionResult StudentDashboard()
+        {
+            return View();
+        }
+
 		}
 	}
-}
