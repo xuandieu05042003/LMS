@@ -23,31 +23,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{
@@ -68,31 +72,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{
@@ -116,31 +124,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{
@@ -193,31 +205,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{
@@ -269,31 +285,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{
@@ -321,31 +341,35 @@ namespace LMS.Controllers
 			var lecturerName = HttpContext.Session.GetString("LecturerName");
 			var lecturerRole = HttpContext.Session.GetString("LecturerRole");
 			var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+			var lecturerImage = HttpContext.Session.GetString("LecturerImage");
 
 			// session for student
 			var studentName = HttpContext.Session.GetString("StudentName");
 			var studentRole = HttpContext.Session.GetString("StudentRole");
 			var studentEmail = HttpContext.Session.GetString("StudentEmail");
+			var studentImage = HttpContext.Session.GetString("StudentImage");
 
 			// 
-			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+			if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(adminImage))
 			{
 				ViewBag.Name = adminName;
 				ViewBag.Role = adminRole;
 				ViewBag.Email = adminEmail;
 				ViewBag.Image = adminImage;
 			}
-			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+			else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail) && !string.IsNullOrEmpty(lecturerImage))
 			{
 				ViewBag.Name = lecturerName;
 				ViewBag.Role = lecturerRole;
 				ViewBag.Email = lecturerEmail;
+				ViewBag.Image = lecturerImage;
 			}
-			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+			else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail) && !string.IsNullOrEmpty(studentImage))
 			{
 				ViewBag.Name = studentName;
 				ViewBag.Role = studentRole;
 				ViewBag.Email = studentEmail;
+				ViewBag.Image = studentImage;
 			}
 			else
 			{

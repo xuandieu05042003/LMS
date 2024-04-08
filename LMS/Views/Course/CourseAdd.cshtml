@@ -1,45 +1,53 @@
-﻿
+﻿@model LMS.Models.Course
 @{
     ViewData["Title"] = "CourseAdd";
 	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
 
+<div class="col-xl-9">
 	<!-- Page main content START -->
 	<div class="page-content-wrapper border">
-
 		<!-- Title -->
 		<div class="row">
 			<div class="col-12 mb-3">
-				<h1 class="h3 mb-2 mb-sm-0">Add new Admin</h1>
+				<h1 class="h3 mb-2 mb-sm-0">Add new Account</h1>
 			</div>
 		</div>
-
-		<form class="row g-3">
+		<form class="row g-3" asp-action="CourseAdd" method="post" enctype="multipart/form-data">
 			<div class="col-md-5">
-				<label for="email" class="form-label">Email</label>
-				<input type="email" class="form-control" id="email">
+				<label asp-for="Video" class="control-label"></label>
+				<input asp-for="Video" class="form-control" />
+				<span asp-validation-for="Video" class="text-danger"></span>
 			</div>
 			<div class="col-md-4">
-				<label for="username" class="form-label">Username</label>
-				<input type="text" class="form-control" id="username">
+				<label asp-for="Describe" class="control-label"></label>
+				<input asp-for="Describe" class="form-control" />
+				<span asp-validation-for="Describe" class="text-danger"></span>
 			</div>
 			<div class="col-md-3">
-				<label for="password" class="form-label">Password</label>
-				<input type="password" class="form-control" id="password">
+				<label asp-for="Name" for="name" class="form-label">Name</label>
+				<input asp-for="Name" type="Name" class="form-control" id="Name">
 			</div>
-			<div class="col-5">
-				<label for="name" class="form-label">Fullname</label>
-				<input type="text" class="form-control" id="name">
+			<div class="col-md-1">
+				<label asp-for="Code" for="Code" class="form-label">Code</label>
+				<input asp-for="Code" type="text" class="form-control" id="Code">
+			</div>
+			<div class="col-md-2">
+				<label asp-for="Instructor" for="Instructor" class="form-label">Instructor</label>
+				<input asp-for="Instructor" type="Instructor" class="form-control" id="Instructor">
+			</div>
+			<div class="col-6">
+				<label asp-for="Semester" for="Semester" class="form-label">Semester</label>
+				<input asp-for="Semester" type="text" class="form-control" id="Semester">
 			</div>
 			<div class="col-7">
-				<label for="address" class="form-label">Address</label>
-				<input type="text" class="form-control" id="address">
+				<label asp-for="Year" for="Year" class="form-label">Year</label>
+				<input asp-for="Year" type="text" class="form-control" id="Year">
 			</div>
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary">Create</button>
 			</div>
 		</form>
-
 	</div>
 	<!-- Page main content END -->
-
+</div>

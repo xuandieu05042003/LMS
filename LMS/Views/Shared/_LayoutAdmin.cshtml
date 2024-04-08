@@ -70,68 +70,40 @@
 
                         <!-- Title -->
                         <!-- <li class="nav-item ms-2 my-2">Pages</li> -->
+                       @*  <!-- Menu item 3 -->
                         <li class="nav-item">
-                            <a class="nav-link" aria-controls="admincollapsepage" data-bs-toggle="collapse" href="#admincollapsepage" role="button" aria-expanded="false">
-                                <i class="bi bi-person-fill-gear fa-fw me-2"></i>Admin
-                            </a>
-                            <ul data-bs-parent="#navbar-sidebar" class="nav collapse flex-column" id="admincollapsepage">
-                                <li class="nav-item"><a href="@Url.Action("AdminAdd", "Admin")" class="nav-link">Add New Admin</a></li>
-								<li class="nav-item"><a href="@Url.Action("Index", "Admin")" class="nav-link">Admin List</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- menu item 2 -->
-                        @* <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded="false" aria-controls="collapsepage">
-                                <i class="bi bi-basket fa-fw me-2"></i>Courses
-                            </a>
-                            <!-- Submenu -->
-                            <ul class="nav collapse flex-column" id="collapsepage" data-bs-parent="#navbar-sidebar">
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("CourseAdd", "Course")">Add Course</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("Index", "Course")">All Courses</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("CourseDetail", "Course")">Course Detail</a></li>
-                            </ul>
-                        </li> *@
-
-                        <!-- Menu item 3 -->
-                        @* <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapsepagestudent" role="button" aria-expanded="false" aria-controls="collapsepage">
                                 <i class="fas fa-user-graduate fa-fw me-2"></i>Student
                             </a>
                             <ul class="nav collapse flex-column" id="collapsepagestudent" data-bs-parent="#navbar-sidebar">
-                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("StudentAdd", "Student")"> Add Students</a></li>
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index", "Student")" class="nav-link">Student list</a>
                                 </li>
                             </ul>
                         </li> *@
-
-                        <!-- Menu item 4 -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
-                                <i class="fas fa-user-tie fa-fw me-2"></i>Lecture
-                            </a>
-                            <!-- Submenu -->
-                            <ul class="nav collapse flex-column" id="collapseinstructors" data-bs-parent="#navbar-sidebar">
-								<li class="nav-item"> <a class="nav-link" href="@Url.Action("LecturerAdd", "Lecturer")">Add Lecture</a></li>
-								<li class="nav-item"> <a class="nav-link" href="@Url.Action("AdminLecture", "Lecturer")">Lecture List</a></li>
-                            </ul>
-                        </li>
-
                         <!-- Menu item 5 -->
                         <li class="nav-item">
-                            <a class="nav-link" href="admin-review.html">
-                                <i class="far fa-comment-dots fa-fw me-2"></i>Reviews
+						<a class="nav-link" href="@Url.Action("Index", "Admin")">
+								<i class="bi bi-person-fill-gear fa-fw me-2"></i>Admin
                             </a>
                         </li>
 
                         <!-- Menu item 6 -->
                         <li class="nav-item">
-                            <a class="nav-link" href="admin-earning.html">
-                                <i class="far fa-chart-bar fa-fw me-2"></i>Earnings
+						<a class="nav-link" href="@Url.Action("AdminLecture", "Lecturer")">
+								<i class="fas fa-user-tie fa-fw me-2"></i>Lecturer
                             </a>
                         </li>
-
+						<li class="nav-item">
+							<a class="nav-link" href="@Url.Action("Course", "Course")">
+								<i class="bi bi-basket fa-fw me-2"></i>Course
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="@Url.Action("AdminAdd", "Admin")">
+								<i class="far fa-chart-bar fa-fw me-2"></i>Add new Account
+							</a>
+						</li>
                         <!-- Menu item 7 -->
                         <li class="nav-item">
                             <a class="nav-link" href="admin-setting.html">
@@ -162,7 +134,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
                             </ul>
                         </li>
-
+					</ul>
                         <!-- Sidebar footer START -->
                         <div class="px-3 mt-auto pt-3">
                             <div class="d-flex align-items-center justify-content-between text-primary-hover">
@@ -178,7 +150,6 @@
                             </div>
                         </div>
                         <!-- Sidebar footer END -->
-
                 </div>
             </div>
         </nav>

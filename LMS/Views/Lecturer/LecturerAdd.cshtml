@@ -1,168 +1,54 @@
-﻿
+﻿@model LMS.Models.Admin
 @{
     ViewData["Title"] = "LecturerAdd";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
 
-<!-- Page main content START -->
-<div class="page-content-wrapper border">
 
-	<!-- Title -->
-	<div class="row">
-		<div class="col-12 mb-3">
-			<h1 class="h3 mb-2 mb-sm-0">Add new Lecturers</h1>
-			<hr>
-			<h6 class="mb-0">Personal information</h6>
-		</div>
-	</div>
-
-	<form class="row g-3">
-		<div class="col-md-4">
-			<label for="name" class="form-label">
-				Lecturers name <span class="text-danger">*</span>
-			</label>
-			<input type="name" class="form-control" id="email">
-		</div>
-		<div class="col-md-2">
-			<label for="gender" class="form-label">
-				Gender <span class="text-danger">*</span>
-			</label>
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Choose</option>
-				<option value="1">Male</option>
-				<option value="2">Female</option>
-			</select>
-		</div>
-		<div class="col-md-6">
-			<label for="dob" class="form-label">
-				Date of birth <span class="text-danger">*</span>
-			</label>
-			<div class="col-lg-8">
-				<div class="row g-2 g-sm-4">
-					<div class="col-4">
-						<select class="form-select js-choice z-index-9 border-0 bg-light"
-								aria-label=".form-select-sm">
-							<option>Date</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-							<option>11</option>
-							<option>12</option>
-							<option>13</option>
-							<option>14</option>
-							<option>15</option>
-							<option>16</option>
-							<option>17</option>
-							<option>18</option>
-							<option>19</option>
-							<option>20</option>
-							<option>21</option>
-							<option>22</option>
-							<option>23</option>
-							<option>24</option>
-							<option>25</option>
-							<option>26</option>
-							<option>27</option>
-							<option>28</option>
-							<option>29</option>
-							<option>30</option>
-							<option>31</option>
-						</select>
-					</div>
-					<div class="col-4">
-						<select class="form-select js-choice z-index-9 border-0 bg-light"
-								aria-label=".form-select-sm">
-							<option>Month</option>
-							<option>Jan</option>
-							<option>Feb</option>
-							<option>Mar</option>
-							<option>Apr</option>
-							<option>Jun</option>
-							<option>Jul</option>
-							<option>Aug</option>
-							<option>Sep</option>
-							<option>Oct</option>
-							<option>Nov</option>
-							<option>Dec</option>
-						</select>
-					</div>
-					<div class="col-4">
-						<select class="form-select js-choice z-index-9 border-0 bg-light"
-								aria-label=".form-select-sm">
-							<option>Year</option>
-							<option>1990</option>
-							<option>1991</option>
-							<option>1992</option>
-							<option>1993</option>
-							<option>1994</option>
-							<option>1995</option>
-							<option>1996</option>
-							<option>1997</option>
-							<option>1998</option>
-							<option>1999</option>
-							<option>2000</option>
-							<option>2001</option>
-							<option>2002</option>
-							<option>2003</option>
-							<option>2004</option>
-							<option>2005</option>
-						</select>
-					</div>
-				</div>
+	<!-- Page main content START -->
+	<div class="page-content-wrapper border">
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 mb-3">
+				<h1 class="h3 mb-2 mb-sm-0">Add new Lecturer</h1>
 			</div>
 		</div>
-		<div class="col-4">
-			<label for="name" class="form-label">Phone number</label>
-			<input type="phone" class="form-control" id="name">
-		</div>
-		<div class="col-7">
-			<label for="address" class="form-label">
-				Address <span class="text-danger">*</span>
-			</label>
-			<input type="text" class="form-control" id="address">
-		</div>
-		<div class="col-10 mb-1">
-			<hr>
-			<h6 class="mb-0">Educational information</h6>
-		</div>
-		<div class="col-md-4">
-			<label for="school" class="form-label">
-				School <span class="text-danger">*</span>
-			</label>
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Select school</option>
-				<option value="1">FPT University</option>
-				<option value="2">Greenwich Vietnam</option>
-				<option value="3">FPT Polytechnic</option>
-				<option value="4">BTEC FPT British College</option>
-				<option value="5">Melbourne Polytechnic</option>
-			</select>
-		</div>
-		<div class="col-3">
-			<label for="studentID" class="form-label">
-				Lecturers ID <span class="text-danger">*</span>
-			</label>
-			<input type="text" class="form-control" id="ID">
-		</div>
-		<div class="col-4">
-			<label for="email" class="form-label">
-				School issued email <span class="text-danger">*</span>
-			</label>
-			<input type="email" class="form-control" id="email">
-
-		</div>
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary">Create</button>
-		</div>
-	</form>
-
-</div>
-<!-- Page main content END -->
+		<form class="row g-3" asp-action="LecturerAdd" method="post" enctype="multipart/form-data">
+			<div class="col-md-5">
+				<label asp-for="Name" for="name" class="form-label">Name</label>
+				<input asp-for="Name" type="Name" class="form-control" id="Name">
+			</div>
+			<div class="col-md-4">
+				<label asp-for="Phone" for="Phone" class="form-label">Phone</label>
+				<input asp-for="Phone" type="text" class="form-control" id="Phone">
+			</div>
+			<div class="col-md-3">
+				<label asp-for="Email" for="Email" class="form-label">Email</label>
+				<input asp-for="Email" type="Email" class="form-control" id="Email">
+			</div>
+			<div class="col-5">
+				<label asp-for="Username" for="Username" class="form-label">Username</label>
+				<input asp-for="Username" type="text" class="form-control" id="Username">
+			</div>
+			<div class="col-7">
+				<label asp-for="Password" for="Password" class="form-label">Password</label>
+				<input asp-for="Password" type="text" class="form-control" id="Password">
+			</div>
+			<div class="form-group">
+				<label asp-for="Role" class="form-label"></label>
+				<select asp-for="Role" class="form-control">
+					<option value="Lecturer">Lecturer</option>
+				</select>
+				<span asp-validation-for="Role" class="text-danger"></span>
+			</div>
+			<div class="col-7">
+				<label asp-for="Image" class="form-label"></label>
+				<input asp-for="Image" type="file" class="form-control" />
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Create</button>
+			</div>
+		</form>
+	</div>
+	<!-- Page main content END -->
 

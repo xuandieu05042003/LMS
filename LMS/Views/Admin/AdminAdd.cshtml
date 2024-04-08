@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-	<!-- Page main content START -->
+<!-- Page main content START -->
 <div class="page-content-wrapper border">
 		<!-- Title -->
 		<div class="row">
 			<div class="col-12 mb-3">
-				<h1 class="h3 mb-2 mb-sm-0">Add new Admin</h1>
+				<h1 class="h3 mb-2 mb-sm-0">Add New Acount</h1>
 			</div>
 		</div>
 		<form class="row g-3" asp-action="AdminAdd" method="post" enctype="multipart/form-data">
@@ -36,7 +36,8 @@
 			<div class="form-group">
 				<label asp-for="Role" class="form-label"></label>
 				<select asp-for="Role" class="form-control">
-					<option value="Admin">Admin</option>
+				<option value="Admin">Admin</option>
+				<option value="Lecturer">Lecturer</option>
 				</select>
 				<span asp-validation-for="Role" class="text-danger"></span>
 			</div>
@@ -49,5 +50,5 @@
 			</div>
 		</form>
 </div>
-	<!-- Page main content END -->
+<!-- Page main content END -->
 

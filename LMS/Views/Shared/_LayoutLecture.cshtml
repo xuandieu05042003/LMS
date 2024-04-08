@@ -134,8 +134,7 @@
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
 					   role="button" data-bs-auto-close="outside" data-bs-display="static"
 					   data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="avatar-img rounded-circle" src="~/assets/images/avatar/placeholder.jpg"
-							 alt="avatar">
+						<img class="avatar-img rounded-circle shadow" src="data:image;base64,@ViewBag.Image" alt="Lecturer Image" class="rounded-circle" />
 					</a>
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
 						aria-labelledby="profileDropdown">
@@ -144,8 +143,7 @@
 							<div class="d-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar me-3">
-									<img class="avatar-img rounded-circle shadow"
-										 src="~/assets/images/avatar/placeholder.jpg" alt="avatar">
+									<img class="avatar-img rounded-circle shadow" src="data:image;base64,@ViewBag.Image" alt="Lecturer Image" class="rounded-circle" />
 								</div>
 								<div>
 									<a class="h6" href="#">@ViewBag.Name</a>
@@ -242,7 +240,7 @@
             <!-- Main banner background image -->
             <div class="container-fluid px-0">
                 <div class="bg-blue h-100px h-md-200px rounded-0"
-                     style="background:url(~/assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+                     style="background:url(../assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
                 </div>
             </div>
             <div class="container mt-n4">
@@ -254,7 +252,7 @@
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-										<img class="avatar-img rounded-circle border border-white border-3 shadow" src="data:image;base64,@ViewBag.Image" alt="Admin Image" class="rounded-circle" />
+										<img class="avatar-img rounded-circle shadow" src="data:image;base64,@ViewBag.Image" alt="Lecturer Image"/>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -279,7 +277,7 @@
                                     </div>
                                     <!-- Button -->
                                     <div class="d-flex align-items-center mt-2 mt-md-0">
-                                        <a href="instructor-create-course.html"
+										<a href="@Url.Action("CourseAdd", "Course")"
                                            class="btn btn-success mb-0">
                                             Create
                                             a course
