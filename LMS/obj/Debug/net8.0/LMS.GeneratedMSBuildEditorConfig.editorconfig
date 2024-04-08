@@ -30,8 +30,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5BZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Admin/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
+[D:/GROUP5SMS/LMS/LMS/Views/Admin/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Admin/Delete.cshtml]
@@ -94,10 +94,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GROUP5SMS/LMS/LMS/Views/Home/AdminDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/GROUP5SMS/LMS/LMS/Views/Home/FAQs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGQVFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -112,10 +108,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GROUP5SMS/LMS/LMS/Views/Home/IndexNoLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleE5vTG9naW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Home/LectureDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMZWN0dXJlRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Home/Login.cshtml]
@@ -146,6 +138,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcTGVjdHVyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GROUP5SMS/LMS/LMS/Views/Lecturer/LectureDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcTGVjdHVyZURhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GROUP5SMS/LMS/LMS/Views/Lecturer/LecturerAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcTGVjdHVyZXJBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -168,26 +164,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GROUP5SMS/LMS/LMS/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_layout_All_Course.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfQWxsX0NvdXJzZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_layout_Course_Categories.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfQ291cnNlX0NhdGVnb3JpZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_layout_Course_Single.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfQ291cnNlX1NpbmdsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_layout_FAQs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfRkFRcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Shared/_layout_help_center.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfaGVscF9jZW50ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -220,10 +196,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GROUP5SMS/LMS/LMS/Views/Student/StudentList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50TGlzdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/GROUP5SMS/LMS/LMS/Views/Student/StudentLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50TG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GROUP5SMS/LMS/LMS/Views/Student/StudentRegister.cshtml]

@@ -14,16 +14,95 @@ namespace LMS.Controllers
 
         public IActionResult Student()
         {
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+            var adminImage = HttpContext.Session.GetString("AdminImage");
+
+            // session for lecture
+            var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+            {
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+                ViewBag.Image = adminImage;
+            }
+            else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid session";
+            }
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Student>("student");
             var student = table.Find(FilterDefinition<Student>.Empty).ToList();
             return View(student);
         }
 
-        [HttpPost]
 		public ActionResult Edit(string id)
 		{
-			var database = client.GetDatabase("universityDtabase");
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+            var adminImage = HttpContext.Session.GetString("AdminImage");
+
+            // session for lecture
+            var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+            {
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+                ViewBag.Image = adminImage;
+            }
+            else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid session";
+            }
+            var database = client.GetDatabase("universityDtabase");
 			var table = database.GetCollection<Student>("student");
 			var student = table.Find(c => c.Id == id).FirstOrDefault();
 			if (student == null)
@@ -50,6 +129,46 @@ namespace LMS.Controllers
 
 		public ActionResult Details(String id)
         {
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+            var adminImage = HttpContext.Session.GetString("AdminImage");
+
+            // session for lecture
+            var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+            {
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+                ViewBag.Image = adminImage;
+            }
+            else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid session";
+            }
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Student>("student");
             var student = table.Find(c => c.Id == id).FirstOrDefault();
@@ -62,6 +181,46 @@ namespace LMS.Controllers
 
         public ActionResult Delete(string id)
         {
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+            var adminImage = HttpContext.Session.GetString("AdminImage");
+
+            // session for lecture
+            var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
+            {
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+                ViewBag.Image = adminImage;
+            }
+            else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid session";
+            }
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Student>("student");
             var student = table.Find(c => c.Id == id).FirstOrDefault();
@@ -80,29 +239,49 @@ namespace LMS.Controllers
             table.DeleteOne(c => c.Id == student.Id);
             return RedirectToAction("Index");
         }
-        public IActionResult StudentLogin()
+        
+        public IActionResult StudentRegister()
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult StudentLogin(Student student)
-        {
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            var user = table.AsQueryable<Student>().FirstOrDefault(s => s.Email == student.Email && s.Password == student.Password);
-            if (user != null)
+            // session for admin
+            var adminName = HttpContext.Session.GetString("AdminName");
+            var adminRole = HttpContext.Session.GetString("AdminRole");
+            var adminEmail = HttpContext.Session.GetString("AdminEmail");
+            var adminImage = HttpContext.Session.GetString("AdminImage");
+
+            // session for lecture
+            var lecturerName = HttpContext.Session.GetString("LecturerName");
+            var lecturerRole = HttpContext.Session.GetString("LecturerRole");
+            var lecturerEmail = HttpContext.Session.GetString("LecturerEmail");
+
+            // session for student
+            var studentName = HttpContext.Session.GetString("StudentName");
+            var studentRole = HttpContext.Session.GetString("StudentRole");
+            var studentEmail = HttpContext.Session.GetString("StudentEmail");
+
+            // 
+            if (!string.IsNullOrEmpty(adminName) && !string.IsNullOrEmpty(adminRole) && !string.IsNullOrEmpty(adminEmail))
             {
-                // Authentication successful, redirect to student dashboard or home page
-                return RedirectToAction("Index", "Home");
+                ViewBag.Name = adminName;
+                ViewBag.Role = adminRole;
+                ViewBag.Email = adminEmail;
+                ViewBag.Image = adminImage;
+            }
+            else if (!string.IsNullOrEmpty(lecturerName) && !string.IsNullOrEmpty(lecturerRole) && !string.IsNullOrEmpty(lecturerEmail))
+            {
+                ViewBag.Name = lecturerName;
+                ViewBag.Role = lecturerRole;
+                ViewBag.Email = lecturerEmail;
+            }
+            else if (!string.IsNullOrEmpty(studentName) && !string.IsNullOrEmpty(studentRole) && !string.IsNullOrEmpty(studentEmail))
+            {
+                ViewBag.Name = studentName;
+                ViewBag.Role = studentRole;
+                ViewBag.Email = studentEmail;
             }
             else
             {
-                ViewBag.Loginfail = "Invalid username or password";
-                return View();
+                ViewBag.ErrorMessage = "Invalid session";
             }
-        }
-        public IActionResult StudentRegister()
-        {
             return View();
         }
         [HttpPost]

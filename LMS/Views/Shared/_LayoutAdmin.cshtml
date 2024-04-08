@@ -371,8 +371,7 @@
 									<a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
 									   role="button" data-bs-auto-close="outside" data-bs-display="static"
 									   data-bs-toggle="dropdown" aria-expanded="false">
-										<img class="avatar-img rounded-circle"
-											 src="~/assets/images/avatar/placeholder.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="data:image;base64,@ViewBag.Image" alt="avatar" class="rounded-circle"/>
 									</a>
 
 									<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
@@ -382,8 +381,7 @@
 											<div class="d-flex align-items-center">
 												<!-- Avatar -->
 												<div class="avatar me-3">
-													<img class="avatar-img rounded-circle shadow"
-														 src="~/assets/images/avatar/placeholder.jpg" alt="avatar">
+													<img class="avatar-img rounded-circle shadow" src="data:image;base64,@ViewBag.Image" alt="Admin Image" class="rounded-circle" />
 												</div>
 												<div>
 													<a class="h6" href="#">@ViewBag.Name</a>

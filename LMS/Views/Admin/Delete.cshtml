@@ -4,8 +4,8 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<div class="modal fade" id="exampleDelete" tabindex="-1">
+<!-- Delete Modal-->
+<div class="modal fade" id="exampleDelete" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -50,7 +50,7 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input data-bs-target="#exampleModal" type="submit" value="Delete" class="btn btn-danger" />
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
