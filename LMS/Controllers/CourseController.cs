@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using LMS.Models;
+using MongoDB.Bson;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace LMS.Controllers
 {
@@ -338,7 +340,7 @@ namespace LMS.Controllers
 			}
 			return View();
 		}
-		public IActionResult Single()
+		public IActionResult Single(string id)
 		{
 			// session for admin
 			var adminName = HttpContext.Session.GetString("AdminName");
@@ -380,8 +382,13 @@ namespace LMS.Controllers
 			{
 				ViewBag.ErrorMessage = "Invalid session";
 			}
-			return View();
-		}
+            var database = client.GetDatabase("universityDtabase");
+            var table = database.GetCollection<Course>("course");
+            var filter = Builders<Course>.Filter.Eq(x => x.Id, "aa8cb7c1-fa30-40d2-a8b0-659e37af275a");
+            var course = table.Find(filter).FirstOrDefault();
+
+            return View(course);
+        }
 		public IActionResult Allcourse()
 		{
 			// session for admin
