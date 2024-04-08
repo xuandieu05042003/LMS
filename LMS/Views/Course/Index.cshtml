@@ -12,9 +12,9 @@
 <table class="table">
     <thead>
         <tr>
-            @* <th>
+            <th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th> *@
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -33,15 +33,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Video)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Describe)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            @* <td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Id)
-            </td> *@
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -58,7 +61,10 @@
                 @Html.DisplayFor(modelItem => item.Year)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.Video)
+                @Html.DisplayFor(modelItem => item.Video)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Describe)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

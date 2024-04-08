@@ -14,5 +14,6 @@ namespace LMS.Models
         public string Semester { get; set; }
         public string Year { get; set; }
         public string Video { get; set; }
+        public string Describe { get; set; }
     }
 }
