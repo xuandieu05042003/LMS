@@ -1,6 +1,6 @@
 ﻿@model LMS.Models.Course
 @{
-    ViewData["Title"] = "CourseAdd";
+	ViewData["Title"] = "CourseAdd";
 	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
 
@@ -13,8 +13,8 @@
 				<h1 class="h3 mb-2 mb-sm-0">Add new Account</h1>
 			</div>
 		</div>
-		<form class="row g-3" asp-action="CourseAdd" method="post" enctype="multipart/form-data">
-			<div class="col-md-5">
+		<form lass="row g-3" asp-controller="Course" asp-action="CourseAdd" method="post" enctype="multipart/form-data">
+			<div class="col-md-3">
 				<label asp-for="Video" class="control-label"></label>
 				<input asp-for="Video" class="form-control" />
 				<span asp-validation-for="Video" class="text-danger"></span>
@@ -24,7 +24,7 @@
 				<input asp-for="Describe" class="form-control" />
 				<span asp-validation-for="Describe" class="text-danger"></span>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-5">
 				<label asp-for="Name" for="name" class="form-label">Name</label>
 				<input asp-for="Name" type="Name" class="form-control" id="Name">
 			</div>
@@ -44,8 +44,12 @@
 				<label asp-for="Year" for="Year" class="form-label">Year</label>
 				<input asp-for="Year" type="text" class="form-control" id="Year">
 			</div>
+			<div class="col-7">
+				<label asp-for="LecturerId" for="LecturerId" class="form-label">LecturerId</label>
+				<input type="text" asp-for="LecturerId" />
+			</div>
 			<div class="col-12">
-				<button type="submit" class="btn btn-primary">Create</button>
+				<button type="submit" class="btn btn-primary" asp-controller="Course" asp-action="CourseAdd" asp-route-lecturerId="@ViewBag.LecturerId">Create</button>
 			</div>
 		</form>
 	</div>

@@ -2,158 +2,158 @@
 <html lang="en">
 
 <head>
-    <title>FPT Training System</title>
+	<title>FPT Training System</title>
 
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
-    <meta name="description" content="Eduport- LMS, Education and Course Theme">
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="~/assets/images/fpt.svg">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="~/assets/images/fpt.svg">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
 
-    <!-- Plugins CSS -->
+	<!-- Plugins CSS -->
 	<link rel="stylesheet"
 		  type="text/css"
 		  href="~/assets/vendor/tiny-slider/tiny-slider.css" />
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/choices/css/choices.min.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/apexcharts/css/apexcharts.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/aos/aos.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/apexcharts/css/apexcharts.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
 
 </head>
 
 <body>
-	
-    <!-- **************** MAIN CONTENT START **************** -->
-    <main>
-        <div class="preloader">
-            <div class="preloader-item">
-                <div class="spinner-grow text-primary"></div>
-            </div>
-        </div>
-        <!-- Sidebar START -->
-        <nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
 
-            <!-- Navbar brand for xl START -->
-            <div class="d-flex align-items-center">
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+		<div class="preloader">
+			<div class="preloader-item">
+				<div class="spinner-grow text-primary"></div>
+			</div>
+		</div>
+		<!-- Sidebar START -->
+		<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
+
+			<!-- Navbar brand for xl START -->
+			<div class="d-flex align-items-center">
 				<a class="navbar-brand" href="@Url.Action("AdminDashboard", "Home")">
-                    <img class="navbar-brand-item ms-1" src="~/assets/images/FPTEdu.png" alt>
-                </a>
-            </div>
-            <!-- Navbar brand for xl END -->
+					<img class="navbar-brand-item ms-1" src="~/assets/images/FPTEdu.png" alt>
+				</a>
+			</div>
+			<!-- Navbar brand for xl END -->
 
-            <div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
-                <div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
+			<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
+				<div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
 
-                    <!-- Sidebar menu START -->
+					<!-- Sidebar menu START -->
 
-                    <ul class="navbar-nav flex-column " id="navbar-sidebar">
+					<ul class="navbar-nav flex-column " id="navbar-sidebar">
 
-                        <!-- Menu item 1 -->
-                        <li class="nav-item">
+						<!-- Menu item 1 -->
+						<li class="nav-item">
 							<a href="@Url.Action("AdminDashboard", "Home")" class="nav-link active">
-                                <i class="bi bi-house fa-fw me-2"></i>Dashboard
-                            </a>
-                        </li>
+								<i class="bi bi-house fa-fw me-2"></i>Dashboard
+							</a>
+						</li>
 
-                        <!-- Title -->
-                        <!-- <li class="nav-item ms-2 my-2">Pages</li> -->
-                       @*  <!-- Menu item 3 -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapsepagestudent" role="button" aria-expanded="false" aria-controls="collapsepage">
-                                <i class="fas fa-user-graduate fa-fw me-2"></i>Student
-                            </a>
-                            <ul class="nav collapse flex-column" id="collapsepagestudent" data-bs-parent="#navbar-sidebar">
-                                <li class="nav-item">
-                                    <a href="@Url.Action("Index", "Student")" class="nav-link">Student list</a>
-                                </li>
-                            </ul>
-                        </li> *@
-                        <!-- Menu item 5 -->
-                        <li class="nav-item">
-						<a class="nav-link" href="@Url.Action("Index", "Admin")">
+						<!-- Title -->
+						<!-- <li class="nav-item ms-2 my-2">Pages</li> -->
+						@*  <!-- Menu item 3 -->
+						<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#collapsepagestudent" role="button" aria-expanded="false" aria-controls="collapsepage">
+						<i class="fas fa-user-graduate fa-fw me-2"></i>Student
+						</a>
+						<ul class="nav collapse flex-column" id="collapsepagestudent" data-bs-parent="#navbar-sidebar">
+						<li class="nav-item">
+						<a href="@Url.Action("Index", "Student")" class="nav-link">Student list</a>
+						</li>
+						</ul>
+						</li> *@
+						<!-- Menu item 5 -->
+						<li class="nav-item">
+							<a class="nav-link" href="@Url.Action("Index", "Admin")">
 								<i class="bi bi-person-fill-gear fa-fw me-2"></i>Admin
-                            </a>
-                        </li>
+							</a>
+						</li>
 
-                        <!-- Menu item 6 -->
-                        <li class="nav-item">
-						<a class="nav-link" href="@Url.Action("AdminLecture", "Lecturer")">
+						<!-- Menu item 6 -->
+						<li class="nav-item">
+							<a class="nav-link" href="@Url.Action("AdminLecture", "Lecturer")">
 								<i class="fas fa-user-tie fa-fw me-2"></i>Lecturer
-                            </a>
-                        </li>
+							</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="@Url.Action("Course", "Course")">
 								<i class="bi bi-basket fa-fw me-2"></i>Course
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="@Url.Action("AdminAdd", "Admin")">
+							<a class="nav-link" href="@Url.Action("AddAccount", "Admin")">
 								<i class="far fa-chart-bar fa-fw me-2"></i>Add new Account
 							</a>
 						</li>
-                        <!-- Menu item 7 -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin-setting.html">
-                                <i class="fas fa-user-cog fa-fw me-2"></i>Admin Settings
-                            </a>
-                        </li>
+						<!-- Menu item 7 -->
+						<li class="nav-item">
+							<a class="nav-link" href="admin-setting.html">
+								<i class="fas fa-user-cog fa-fw me-2"></i>Admin Settings
+							</a>
+						</li>
 
-                        <!-- Menu item 8 -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
-                                <i class="bi bi-lock fa-fw me-2"></i>Authentication
-                            </a>
-                            <!-- Submenu -->
-                            <ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="sign-up.html">
-                                        Sign
-                                        Up
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="sign-in.html">
-                                        Sign
-                                        In
-                                    </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="forgot-password.html">Forgot Password</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
-                            </ul>
-                        </li>
+						<!-- Menu item 8 -->
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
+								<i class="bi bi-lock fa-fw me-2"></i>Authentication
+							</a>
+							<!-- Submenu -->
+							<ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
+								<li class="nav-item">
+									<a class="nav-link" href="sign-up.html">
+										Sign
+										Up
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="sign-in.html">
+										Sign
+										In
+									</a>
+								</li>
+								<li class="nav-item"> <a class="nav-link" href="forgot-password.html">Forgot Password</a></li>
+								<li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
+							</ul>
+						</li>
 					</ul>
-                        <!-- Sidebar footer START -->
-                        <div class="px-3 mt-auto pt-3">
-                            <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                                <a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
-                                    <i class="bi bi-gear-fill"></i>
-                                </a>
-								<a class="h5 mb-0 text-body" href="@Url.Action("IndexLogin", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
-                                    <i class="bi bi-globe"></i>
-                                </a>
-								<a class="h5 mb-0 text-body" href="@Url.Action("Login", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign out">
-                                    <i class="bi bi-power"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Sidebar footer END -->
-                </div>
-            </div>
-        </nav>
-        <!-- Sidebar END -->
+					<!-- Sidebar footer START -->
+					<div class="px-3 mt-auto pt-3">
+						<div class="d-flex align-items-center justify-content-between text-primary-hover">
+							<a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
+								<i class="bi bi-gear-fill"></i>
+							</a>
+							<a class="h5 mb-0 text-body" href="@Url.Action("IndexLogin", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
+								<i class="bi bi-globe"></i>
+							</a>
+							<a class="h5 mb-0 text-body" href="@Url.Action("Logout", "Home")" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign out">
+								<i class="bi bi-power"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Sidebar footer END -->
+				</div>
+			</div>
+		</nav>
+		<!-- Sidebar END -->
 		<!-- Page content START -->
 		<div class="page-content">
 
@@ -342,7 +342,7 @@
 									<a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
 									   role="button" data-bs-auto-close="outside" data-bs-display="static"
 									   data-bs-toggle="dropdown" aria-expanded="false">
-										<img class="avatar-img rounded-circle" src="data:image;base64,@ViewBag.Image" alt="avatar" class="rounded-circle"/>
+										<img class="avatar-img rounded-circle" src="data:image;base64,@ViewBag.Image" alt="avatar" class="rounded-circle" />
 									</a>
 
 									<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
@@ -378,7 +378,7 @@
 											</a>
 										</li>
 										<li>
-											<a class="dropdown-item bg-danger-soft-hover" href="~/home/Login">
+											<a class="dropdown-item bg-danger-soft-hover" href="@Url.Action("Logout", "Home")">
 												<i class="bi bi-power fa-fw me-2"></i>Sign Out
 											</a>
 										</li>
@@ -430,23 +430,23 @@
 			@RenderBody()
 		</div>
 		<!-- Page content END -->
-    </main>
-    <!-- **************** MAIN CONTENT END **************** -->
-    <!-- Back to top -->
-    <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+	<!-- Back to top -->
+	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
 
-    <!-- Bootstrap JS -->
-    <script src="~/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="~/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Vendors -->
-    <script src="~/assets/vendor/aos/aos.js"></script>
-    <script src="~/assets/vendor/choices/js/choices.min.js"></script>
-    <script src="~/assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
-    <script src="~/assets/vendor/apexcharts/js/apexcharts.min.js"></script>
-    <script src="~/assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+	<!-- Vendors -->
+	<script src="~/assets/vendor/aos/aos.js"></script>
+	<script src="~/assets/vendor/choices/js/choices.min.js"></script>
+	<script src="~/assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+	<script src="~/assets/vendor/apexcharts/js/apexcharts.min.js"></script>
+	<script src="~/assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
 
-    <!-- Template Functions -->
-    <script src="~/assets/js/functions.js"></script>
+	<!-- Template Functions -->
+	<script src="~/assets/js/functions.js"></script>
 
 </body>
 
