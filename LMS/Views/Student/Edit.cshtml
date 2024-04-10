@@ -2,17 +2,18 @@
 
 @{
     ViewData["Title"] = "Edit";
-	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
-
-<!-- Page main content START -->
-<div class="page-content-wrapper border">
-	<!-- Title -->
-	<div class="row">
-		<div class="col-12 mb-3">
-			<h1 class="h3 mb-2 mb-sm-0">Edit Student</h1>
+<div class="col-xl-9">
+	<!-- Page main content START -->
+	<div class="card bg-transparent border rounded-3">
+		<!-- Title -->
+		<div class="card-header bg-transparent border-bottom">
+			<div class="col-12 mb-3">
+				<h1 class="h3 mb-2 mb-sm-0">Edit Student</h1>
+			</div>
 		</div>
-	</div>
+		<div class="card-body">
 	<form class="row g-3" asp-action="Edit" method="post" enctype="multipart/form-data">
 		<div class="col-md-5">
 			<label asp-for="Name" for="name" class="form-label">Name</label>
@@ -51,5 +52,7 @@
 			<a asp-action="Student">Back to List</a>
 		</div>
 	</form>
+		</div>
+	</div>
 </div>
 <!-- Page main content END -->

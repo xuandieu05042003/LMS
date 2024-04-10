@@ -337,17 +337,39 @@
 										<a class="list-group-item active" href="@Url.Action("LectureDashboard", "Lecturer")">
 											<i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
 										</a>
-										<a class="list-group-item" href="@Url.Action("MyCourses", "Lecturer")">
-											<i class="bi bi-basket fa-fw me-2"></i>My
-											Courses
-										</a>
-										<a class="list-group-item" href="@Url.Action("Student", "Student")">
-											<i class="bi bi-people fa-fw me-2"></i>Students
-										</a>
-										<a class="list-group-item" href="#" data-bs-toggle="tooltip" data-bs-placement="top">
-											<i class="bi bi-pencil-square fa-fw me-2"></i>Edit
-											Profile
-										</a>
+										@if (@ViewBag.Role == "Lecturer")
+										{
+											<a class="list-group-item" href="@Url.Action("MyCourses", "Lecturer")">
+												<i class="bi bi-basket fa-fw me-2"></i>My
+												Courses
+											</a>
+										}
+										@* <a class="list-group-item" href="@Url.Action("MyCourses", "Lecturer")">
+										<i class="bi bi-basket fa-fw me-2"></i>My
+										Courses
+										</a> *@
+										@* @if (@ViewBag.Role == "Lecturer")
+										{
+											<a class="list-group-item" href="instructor-studentlist.html">
+												<i class="bi bi-people fa-fw me-2"></i>Students
+											</a>
+										} *@
+										@if (@ViewBag.Role == "Lecturer")
+										{
+											<a class="list-group-item" href="@Url.Action("Edit", "Lecturer", new { id = ViewBag.Id })"
+											   data-bs-toggle="tooltip" data-bs-placement="top">
+												<i class="bi bi-pencil-square fa-fw me-2"></i>Edit
+												Profile
+											</a>
+										}
+										else if (@ViewBag.Role == "Student")
+										{
+											<a class="list-group-item" href="@Url.Action("Edit", "Student", new { id = ViewBag.Id })"
+											   data-bs-toggle="tooltip" data-bs-placement="top" type="submit">
+												<i class="bi bi-pencil-square fa-fw me-2"></i>Edit
+												Profile
+											</a>
+										}
 										<a class="list-group-item text-danger bg-danger-soft-hover" href="@Url.Action("Logout", "Home")">
 											<i class="bi bi-power fa-fw me-2"></i>Sign Out
 										</a>

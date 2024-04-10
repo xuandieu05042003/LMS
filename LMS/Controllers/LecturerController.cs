@@ -307,8 +307,8 @@ namespace LMS.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit(string id)
-        {
+		public ActionResult Edit(string id)
+		{
 			// session for admin
 			var adminId = HttpContext.Session.GetString("AdminId");
 			var adminName = HttpContext.Session.GetString("AdminName");
@@ -360,30 +360,30 @@ namespace LMS.Controllers
 				ViewBag.ErrorMessage = "Invalid session";
 			}
 			var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Lecturer>("lecturer");
-            var lecturer = table.Find(c => c.Id == id).FirstOrDefault();
-            if (lecturer == null)
-            {
-                return NotFound();
-            }
-            return View(lecturer);
-        }
+			var table = database.GetCollection<Lecturer>("lecturer");
+			var lecturer = table.Find(c => c.Id == id).FirstOrDefault();
+			if (lecturer == null)
+			{
+				return NotFound();
+			}
+			return View(lecturer);
+		}
 
-        [HttpPost]
-        public ActionResult Edit(Lecturer lecturer)
-        {
-            if (string.IsNullOrEmpty(lecturer.Id))
-            {
-                ViewBag.Mgs = "Please provide id";
-                return View(lecturer);
-            }
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Lecturer>("lecturer");
-            table.ReplaceOne(c => c.Id == lecturer.Id, lecturer);
-            return RedirectToAction("AdminLecture");
-        }
+		[HttpPost]
+		public IActionResult Edit(Lecturer lecturer)
+		{
+			if (string.IsNullOrEmpty(lecturer.Id))
+			{
+				ViewBag.Mgs = "Please provide id";
+				return View(lecturer);
+			}
+			var database = client.GetDatabase("universityDtabase");
+			var table = database.GetCollection<Lecturer>("lecturer");
+			table.ReplaceOne(c => c.Id == lecturer.Id, lecturer);
+			return RedirectToAction("AdminLecture");
+		}
 
-        public ActionResult Details(string id)
+		public ActionResult Details(string id)
         {
 			// session for admin
 			var adminId = HttpContext.Session.GetString("AdminId");

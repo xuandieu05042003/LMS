@@ -1,4 +1,4 @@
-﻿@model List<LMS.Models.Course>
+﻿@model LMS.Models.Course
 
 @{
     ViewData["Title"] = "Single";
@@ -8,8 +8,7 @@
 <main>
     <!-- =======================
     Page banner video START -->
-    @foreach (var course in Model)
-    {
+
         
     <section class="py-0 pb-lg-5">
         <div class="container">
@@ -20,7 +19,7 @@
                         <div class="video-player">
                             <div id="player-youtube"
                                  data-plyr-provider="youtube"
-                                 data-plyr-embed-id="@course.Video"></div>
+                                 data-plyr-embed-id="@Model.Video"></div>
                         </div>
                     </div>
                 </div>
@@ -54,7 +53,7 @@
                         <div class="col-12">
                             <!-- Title -->
                             <h1>
-                                @course.Name
+
                             </h1>
                             <!-- Content -->
                             <ul class="list-inline mb-0">
@@ -87,7 +86,6 @@
                                         <h6 class="mb-0">
                                             <a href="#">
                                                 By
-                                                @course.Instructor
                                             </a>
                                         </h6>
                                         <p class="mb-0 small">
@@ -216,7 +214,6 @@
                                         Description
                                     </h5>
                                     <p class="mb-3">
-                                        @course.Describe
                                     </p>
                                     <!-- Course detail END -->
 
@@ -1109,6 +1106,5 @@
     </section>
     <!-- =======================
     Page content END -->
-    }
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
