@@ -90,9 +90,7 @@
                     </form>
                 </div>
 
-                <div class="col-md-2">
-                    <a type="button" href="@Url.Action("CourseAdd", "Course")" class="btn btn-info mb-0">Add New Course</a>
-                </div>
+               
             </div>
             <!-- Search and select END -->
         </div>
@@ -155,14 +153,14 @@
                                                     data-bs-target="#exampleModal" onclick="showDetails('@items.Name', '@items.Code', '@items.Instructor','@items.Semester','@items.Year','@items.Video','@items.Describe')">
                                                 <i class="bi bi-eye"></i>
                                             </button>
-                                            <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                            @* <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
                                                type="submit" asp-action="Edit" asp-route-id="@items.Id">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
                                             <a class="btn btn-light btn-round mb-0"
                                                type="submit" asp-action="Delete" asp-route-id="@items.Id">
                                                 <i class="bi bi-trash"></i>
-                                            </a>
+                                            </a> *@
                                         </td>
                                     </tr>
                                 }

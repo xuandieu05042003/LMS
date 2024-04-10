@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using LMS.Models;
+using MongoDB.Bson;
 
 namespace LMS.Controllers
 {
@@ -121,6 +122,7 @@ namespace LMS.Controllers
 			var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
             var admins = table.Find(FilterDefinition<Admin>.Empty).ToList();
+			ViewBag.userCount = admins.Count;
             return View(admins);
         }
 
@@ -190,6 +192,10 @@ namespace LMS.Controllers
             {
                 collectionName = "lecturer";
             }
+			else if (admin.Role == "Student")
+			{
+				collectionName = "student";
+			}
 
             var table = database.GetCollection<Admin>(collectionName);
             admin.Id = Guid.NewGuid().ToString();

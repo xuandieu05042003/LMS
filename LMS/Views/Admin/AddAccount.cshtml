@@ -14,10 +14,6 @@
 	</div>
 	<form class="row g-3" asp-action="AddAccount" method="post" enctype="multipart/form-data">
 		<div class="col-md-5">
-			<label asp-for="Id" for="id" class="form-label">Id</label>
-			<input asp-for="Id" type="Id" class="form-control" id="Id">
-		</div>
-		<div class="col-md-5">
 			<label asp-for="Name" for="name" class="form-label">Name</label>
 			<input asp-for="Name" type="Name" class="form-control" id="Name">
 		</div>
@@ -42,6 +38,7 @@
 			<select asp-for="Role" class="form-control">
 				<option value="Admin">Admin</option>
 				<option value="Lecturer">Lecturer</option>
+				<option value="Student">Student</option>
 			</select>
 			<span asp-validation-for="Role" class="text-danger"></span>
 		</div>

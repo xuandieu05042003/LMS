@@ -380,7 +380,7 @@ namespace LMS.Controllers
             var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Lecturer>("lecturer");
             table.ReplaceOne(c => c.Id == lecturer.Id, lecturer);
-            return RedirectToAction("Index");
+            return RedirectToAction("AdminLecture");
         }
 
         public ActionResult Details(string id)
