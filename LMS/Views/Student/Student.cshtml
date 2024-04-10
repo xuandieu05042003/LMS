@@ -3,285 +3,172 @@
 
 @{
 	ViewData["Title"] = "Student";
-	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<script>
+    function showDetails(image, name, phone, email) {
+        // Cập nhật nội dung của modal với thông tin chi tiết
+        document.getElementById('detailImage').src = "data:image;base64," + image;
+        document.getElementById('detailName').innerText = name;
+        document.getElementById('detailPhone').innerText = phone;
+        document.getElementById('detailEmail').innerText = email;
+    }
+    function closeModal() {
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.hide();
+    }
+</script>
 <!--Big modal -->
-<div class="modal modal-xl fade" id="exampleModal" tabindex="-1"
-	 aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<!-- Edit profile START -->
-			<div class="card bg-transparent border rounded-3">
-				<!-- Card header -->
-				<div class="card-header bg-transparent border-bottom">
-					<h3 class="card-header-title mb-0">Details</h3>
-				</div>
-				<!-- Card body START -->
-				<div class="card-body">
-					<!-- Form -->
-					<h1>Student Details</h1>
-
-					@* <form class="row g-4">
-					<!-- Full name -->
-					<div class="col-md-6">
-					<label class="form-label">Full Name</label>
-					<input class="form-control" type="text" value="@Model.Name">
-					</div>
-
-					<!-- Birthday -->
-					<div class="col-md-6">
-					<label class="form-label">Birthday</label>
-					<input class="form-control" type="text" value="@Model.Birthday">
-					</div>
-
-					<!-- Phone number -->
-					<div class="col-md-6">
-					<label class="form-label">Phone Number</label>
-					<input class="form-control" type="text" value="@Model.Phone">
-					</div>
-
-					<!-- Email -->
-					<div class="col-md-6">
-					<label class="form-label">Email</label>
-					<input class="form-control" type="email" value="@Model.Email">
-					</div>
-
-					<!-- Address -->
-					<div class="col-md-6">
-					<label class="form-label">Address</label>
-					<input class="form-control" type="text" value="@Model.Address">
-					</div>
-
-					<!-- Role -->
-					<div class="col-md-6">
-					<label class="form-label">Role</label>
-					<input class="form-control" type="text" value="@Model.Role">
-					</div>
-
-					<!-- Password (for display purposes only, do not include in a real form) -->
-					<div class="col-md-6">
-					<label class="form-label">Password (for display purposes only)</label>
-					<input class="form-control" type="text" value="@Model.Password">
-					</div>
-
-					<!-- Save button -->
-					<div class="d-sm-flex justify-content-end">
-					<button type="button" class="btn btn-primary mb-0">Save Changes</button>
-					</div>
-					</form> *@
-				</div>
-				<!-- Card body END -->
-			</div>
-			<!-- Edit profile END -->
-		</div>
-	</div>
-</div>
-<!-- Delete Modal-->
-<div class="modal fade" id="exampleDelete" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Delete</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<p>Do you want to delete</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">
-					No
-				</button>
-				<button type="button" class="btn btn-primary">Yes</button>
-			</div>
-		</div>
-	</div>
+<div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Student</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex">
+                <div class="col-2 g-2" style="box-shadow: -1px 1px 19px -7px; border-radius: 6px">
+                    <img src="data:image;base64," class="img-fluid w-500px rounded shadow-lg" id="detailImage">
+                </div>
+                <form class="col row ps-3 g-3">
+                    <div class="col-md-5">
+                        <h6 class="form-label">Name: <span class="form-control" id="detailName"></span></h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="form-label">Phone: <span class="form-control" id="detailPhone"></span></h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6 class="form-label">Email: <span class="form-control" id="detailEmail"></span></h6>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                @* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button> *@
+                <!-- Các nút khác (nếu cần) -->
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Page main content START -->
 <div class="page-content-wrapper border">
+    <!-- Title -->
+    <div class="row">
+        <div class="col-12">
+            <h1 class="h3 mb-2 mb-sm-0">Stude List</h1>
+        </div>
+    </div>
 
-	<!-- Title -->
-	<div class="row">
-		<div class="col-12">
-			<h1 class="h3 mb-2 mb-sm-0">Student List</h1>
-		</div>
-	</div>
+    <div class="card bg-transparent">
 
-	<div class="card bg-transparent">
+        <!-- Card header START -->
+        <div class="card-header bg-transparent border-bottom px-0">
+            <!-- Search and select START -->
+            <div class="row g-3 align-items-center justify-content-between">
 
-		<!-- Card header START -->
-		<div class="card-header bg-transparent border-bottom px-0">
-			<!-- Search and select START -->
-			<div class="row g-3 align-items-center justify-content-between">
+                <!-- Search bar -->
+                <div class="col-md-8">
+                    <form class="rounded position-relative">
+                        <input class="form-control bg-transparent" type="search" placeholder="Search" aria-label="Search">
+                        <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                            <i class="fas fa-search fs-6 "></i>
+                        </button>
+                    </form>
+                </div>
 
-				<!-- Search bar -->
-				<div class="col-md-8">
-					<form class="rounded position-relative">
-						<input class="form-control bg-transparent" type="search" placeholder="Search" aria-label="Search">
-						<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
-							<i class="fas fa-search fs-6 "></i>
-						</button>
-					</form>
-				</div>
-			</div>
-			<!-- Search and select END -->
-		</div>
-		<!-- Card header END -->
-		<!-- Card body START -->
-		<div class="card-body px-0">
+                <div class="col-md-2">
+                    <a type="button" href="@Url.Action("AddAccount", "Admin")" class="btn btn-info mb-0">Add New Student</a>
+                </div>
+            </div>
+            <!-- Search and select END -->
+        </div>
+        <!-- Card header END -->
+        <!-- Card body START -->
+        <div class="card-body px-0">
 
-			<!-- Tabs content START -->
-			<div class="tab-content">
+            <!-- Tabs content START -->
+            <div class="tab-content">
 
-				<!-- Tabs content item START -->
-				<!-- Tabs content item END -->
-				<!-- Tabs content item START -->
-				<div class="tab-pane fade show active" id="nav-html-tab-1">
-					<div class="table-responsive border-0">
-						<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-							<!-- Table head -->
-							<thead>
-								<tr>
-									<th scope="col" class="text border-0 rounded-start">StudentName</th>
-									<th scope="col" class="text border-0 rounded-start">Birthday</th>
-									<th scope="col" class="text border-0 rounded-start">Phone</th>
-									<!-- <th scope="col" class="border-0">Progress</th> -->
-									<!-- <th scope="col" class="border-0">Courses</th> -->
-									<!-- <th scope="col" class="border-0">Payments</th> -->
-									<th scope="col" class="border-0 rounded-end">Action</th>
-								</tr>
-							</thead>
+                <!-- Tabs content item START -->
+                <!-- Tabs content item END -->
+                <!-- Tabs content item START -->
+                <div class="tab-pane fade show active" id="nav-html-tab-1">
+                    <div class="table-responsive border-0">
+                        <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                            <!-- Table head -->
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text border-0 rounded-start">Name</th>
+                                    <th scope="col" class="text border-0 rounded-start">Phone</th>
+                                    <th scope="col" class="border-0 rounded-end">Action</th>
+                                </tr>
+                            </thead>
 
-							<!-- Table body START -->
-							<tbody>
-								@foreach (var items in Model)
-								{
-									<tr>
-										<td>
-											@items.Name
-										</td>
-										<td>
-											@items.Birthday
-										</td>
-										<td>
-											@items.Phone
-										</td>
-										<td>
-											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-											   data-bs-toggle="modal" data-bs-placement="top" title="Detail"
-											   data-bs-target="#exampleModal">
-												<i class="bi bi-eye"></i>
-											</a>
-											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-											   data-bs-toggle="modal" data-bs-placement="top" title="Edit">
-												<i class="bi bi-pencil"></i>
-											</a>
-											<button class="btn btn-light btn-round mb-0"
-													data-bs-toggle="modal" data-bs-placement="top" title="Delete"
-													data-bs-target="#exampleDelete">
-												<i class="bi bi-trash"></i>
-											</button>
-										</td>
-										@*<td>
-									<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail">
-									<i class="bi bi-eye" asp-action="Details" asp-route-id="@items.Id"></i>
-									</a>
-									<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-									<i class="bi bi-pencil"></i>
-									</a>
-									<button class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" type="submit">
-									<i class="bi bi-trash" asp-action="Details" asp-route-id="@items.Id"></i>
-									</button>
-									</td>*@
-									</tr>
-								}
-							</tbody>
-							<!-- Table body END -->
-						</table>
-					</div>
-				</div>
-				<!-- Tabs content item END -->
+                            <!-- Table body START -->
+                            <tbody>
+                                @foreach (var items in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="data:image;base64,@items.Image" alt="Admin Image" class="avatar avatar-md rounded-circle" />
+                                            @items.Name
+                                        </td>
+                                        <td>
+                                            @items.Phone
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                                    data-bs-toggle="modal" data-bs-placement="top" title="Detail"
+                                                    data-bs-target="#exampleModal" onclick="showDetails('@items.Image','@items.Name', '@items.Phone', '@items.Email')">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                               type="submit" asp-action="Edit" asp-route-id="@items.Id">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-light btn-round mb-0" asp-action="Delete" asp-route-id="@items.Id">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <!-- Table body END -->
+                        </table>
+                    </div>
+                </div>
+                <!-- Tabs content item END -->
 
-			</div>
-			<!-- Tabs content END -->
-		</div>
-		<!-- Card body END -->
-		<!-- Card footer START -->
-		<div class="card-footer bg-transparent pt-0 px-0">
-			<!-- Pagination START -->
-			<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-				<!-- Content -->
-				<p class="mb-0 text-center text-sm-start">
-					Showing 1 to 8 of 20 entries
-				</p>
-				<!-- Pagination -->
-				<nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-					<ul class="pagination pagination-sm pagination-primary-soft mb-0 pb-0 px-0">
-						<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-						<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-						<li class="page-item mb-0">
-							<a class="page-link" href="#">
-								<i class="fas fa-angle-right"></i>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<!-- Pagination END -->
-		</div>
-		<!-- Card footer END -->
-	</div>
+            </div>
+            <!-- Tabs content END -->
+        </div>
+        <!-- Card body END -->
+        <!-- Card footer START -->
+        <div class="card-footer bg-transparent pt-0 px-0">
+            <!-- Pagination START -->
+            <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                <!-- Content -->
+                <p class="mb-0 text-center text-sm-start">
+                    Showing 1 to 8 of 20 entries
+                </p>
+                <!-- Pagination -->
+                <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                    <ul class="pagination pagination-sm pagination-primary-soft mb-0 pb-0 px-0">
+                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                        <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item mb-0">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Pagination END -->
+        </div>
+        <!-- Card footer END -->
+    </div>
 </div>
 <!-- Page main content END -->
-@* <h1>Index</h1> *@
-
-@* <p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr> *@
-@* <th>
-            @Html.DisplayNameFor(model => model.Id)
-            </th> *@
-@* <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-            @Html.DisplayFor(modelItem => item.Id)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table> *@

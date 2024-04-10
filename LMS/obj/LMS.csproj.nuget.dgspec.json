@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Application Development\\LMS\\LMS\\LMS.csproj": {}
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {}
   },
   "projects": {
-    "D:\\Application Development\\LMS\\LMS\\LMS.csproj": {
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Application Development\\LMS\\LMS\\LMS.csproj",
+        "projectUniqueName": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
         "projectName": "LMS",
-        "projectPath": "D:\\Application Development\\LMS\\LMS\\LMS.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Application Development\\LMS\\LMS\\obj\\",
+        "projectPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
+        "packagesPath": "C:\\Users\\FPT SHOP\\.nuget\\packages\\",
+        "outputPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FPT SHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

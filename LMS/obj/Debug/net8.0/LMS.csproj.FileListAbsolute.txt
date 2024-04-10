@@ -240,7 +240,6 @@ D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\staticwebass
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LMS.props
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LMS.props
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\staticwebassets.pack.json
-D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\scopedcss\bundle\LMS.styles.css
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\scopedcss\projectbundle\LMS.bundle.scp.css
 D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\LMS.dll
@@ -1528,3 +1527,4 @@ D:\hoclaravel\LMS\LMS\obj\Debug\net8.0\refint\LMS.dll
 D:\hoclaravel\LMS\LMS\obj\Debug\net8.0\LMS.pdb
 D:\hoclaravel\LMS\LMS\obj\Debug\net8.0\LMS.genruntimeconfig.cache
 D:\hoclaravel\LMS\LMS\obj\Debug\net8.0\ref\LMS.dll
+D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css

@@ -454,7 +454,7 @@ namespace LMS.Controllers
 			}
 			var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Course>("course");
-            var filter = Builders<Course>.Filter.Eq(x => x.Id, "aa8cb7c1-fa30-40d2-a8b0-659e37af275a");
+            var filter = Builders<Course>.Filter.Where(x => x.Id == id);
             var course = table.Find(filter).FirstOrDefault();
 
             return View(course);
