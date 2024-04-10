@@ -192,7 +192,7 @@ namespace LMS.Controllers
                     HttpContext.Session.SetString("StudentName", studentResult.Name);
                     HttpContext.Session.SetString("StudentRole", studentResult.Role);
                     HttpContext.Session.SetString("StudentEmail", studentResult.Email);
-                    HttpContext.Session.SetString("StudentEmail", studentResult.Image);
+                    HttpContext.Session.SetString("StudentImage", studentResult.Image);
                     return RedirectToAction("IndexLogin", "Home");
                 }
 

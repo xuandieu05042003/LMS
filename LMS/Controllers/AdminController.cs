@@ -190,6 +190,10 @@ namespace LMS.Controllers
             {
                 collectionName = "lecturer";
             }
+			else if (admin.Role == "Student")
+			{
+				collectionName = "student";
+			}
 
             var table = database.GetCollection<Admin>(collectionName);
             admin.Id = Guid.NewGuid().ToString();
