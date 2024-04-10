@@ -26,8 +26,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\WORKSPACE\LMS-2\LMS
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/WORKSPACE/LMS-2/LMS/Views/Admin/AdminAdd.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5BZGQuY3NodG1s
+[D:/WORKSPACE/LMS-2/LMS/Views/Admin/AddAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Admin/AdminDashboard.cshtml]
@@ -36,10 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Admin/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/WORKSPACE/LMS-2/LMS/Views/Admin/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Admin/Edit.cshtml]
@@ -118,16 +114,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcQWRtaW5MZWN0dXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/Edit.cshtml]
@@ -140,6 +128,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/LecturerAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcTGVjdHVyZXJBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WORKSPACE/LMS-2/LMS/Views/Lecturer/MyCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJcTXlDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Shared/Error.cshtml]
@@ -164,10 +156,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/WORKSPACE/LMS-2/LMS/Views/Student/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/WORKSPACE/LMS-2/LMS/Views/Student/Delete.cshtml]

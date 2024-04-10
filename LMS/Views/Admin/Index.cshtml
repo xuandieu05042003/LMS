@@ -22,7 +22,7 @@
 <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class ="modal-header">
+            <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Details Admin</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="col-md-2">
-					<a type="button" href="@Url.Action("AdminAdd", "Admin")" class="btn btn-info mb-0">Add new admin</a>
+                    <a type="button" href="@Url.Action("AddAccount", "Admin")" class="btn btn-info mb-0">Add new admin</a>
                 </div>
             </div>
             <!-- Search and select END -->
@@ -119,13 +119,13 @@
                                             @items.Phone
                                         </td>
                                         <td>
-                                            <button class="btn btn-light btn-round me-1 mb-1 mb-md-0" 
-                                            data-bs-toggle="modal" data-bs-placement="top" title="Detail"
+                                            <button class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                                    data-bs-toggle="modal" data-bs-placement="top" title="Detail"
                                                     data-bs-target="#exampleModal" onclick="showDetails('@items.Image','@items.Name', '@items.Phone', '@items.Email', '@items.Username')">
                                                 <i class="bi bi-eye"></i>
                                             </button>
-                                            <a  class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-                                                type="submit" asp-action="Edit" asp-route-id="@items.Id">
+                                            <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                               type="submit" asp-action="Edit" asp-route-id="@items.Id">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
                                             <a class="btn btn-light btn-round mb-0"
@@ -175,4 +175,3 @@
     </div>
 </div>
 <!-- Page main content END -->
-

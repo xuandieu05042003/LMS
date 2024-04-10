@@ -1,0 +1,138 @@
+﻿@model List<LMS.Models.Course>
+@{
+    ViewData["Title"] = "MyCourses";
+    Layout = "~/Views/Shared/_LayoutLecture.cshtml";
+}
+
+<script>
+    function showDetails(name, code, instructor, sesmester, year, video, describe) {
+        // Cập nhật nội dung của modal với thông tin chi tiết
+        // document.getElementById('detailImage').src = "data:image;base64," + image;
+        document.getElementById('detailName').innerText = name;
+        document.getElementById('detailCode').innerText = code;
+        document.getElementById('detailInstructor').innerText = instructor;
+        document.getElementById('detailSemester').innerText = semester;
+        document.getElementById('detailYear').innerText = year;
+        document.getElementById('detailVideo').innerText = video;
+        document.getElementById('detailDescribe').innerText = describe;
+    }
+    function closeModal() {
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.hide();
+    }
+</script>
+<!--Big modal -->
+<div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Admin</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex">
+                <div class="col-2 g-2" style="box-shadow: -1px 1px 19px -7px; border-radius: 6px">
+                    <img src="data:image;base64," class="img-fluid w-500px rounded shadow-lg" id="detailImage">
+                </div>
+                <form class="col row ps-3 g-3">
+                    <div class="col-md-5">
+                        <h6 class="form-label">Name: <span class="form-control" id="detailName"></span></h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="form-label">Code: <span class="form-control" id="detailCode"></span></h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6 class="form-label">Instructor: <span class="form-control" id="detailInstructor"></span></h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="form-label">Semester: <span class="form-control" id="detailSemester"></span></h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="form-label">Year: <span class="form-control" id="detailYear"></span></h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="form-label">Video: <span class="form-control" id="detailVideo"></span></h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="form-label">Describe: <span class="form-control" id="detailDescribe"></span></h6>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                @* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button> *@
+                <!-- Các nút khác (nếu cần) -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page main content START -->
+<div class="page-content-wrapper border">
+<div class="col-xl-9">
+    <div class="tab-pane fade show active" id="nav-html-tab-1">
+        <div class="table-responsive border-0">
+            <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                <!-- Table head -->
+                <thead>
+                    <tr>
+                        <th scope="col" class="text border-0 rounded-start">Name</th>
+                        <th scope="col" class="text border-0 rounded-start">Code</th>
+                        <th scope="col" class="text border-0 rounded-start">Instructor</th>
+                        <th scope="col" class="text border-0 rounded-start">Semester</th>
+                        <th scope="col" class="text border-0 rounded-start">Year</th>
+                        @* <th scope="col" class="text border-0 rounded-start">Video</th>
+                        <th scope="col" class="text border-0 rounded-start">Describe</th> *@
+                        <th scope="col" class="border-0 rounded-end">Action</th>
+                    </tr>
+                </thead>
+
+                <!-- Table body START -->
+                <tbody>
+                    @foreach (var course in Model)
+                    {
+                        if (course.LecturerId == ViewBag.Id)
+                        {
+                            <tr>
+                                <td>
+                                    @course.Name
+                                </td>
+                                <td>
+                                    @course.Code
+                                </td>
+                                <td>
+                                    @course.Instructor
+                                </td>
+                                <td>
+                                    @course.Semester
+                                </td>
+                                <td>
+                                    @course.Year
+                                </td>
+                                @* <td>
+                                    @items.Video
+                                </td>
+                                <td>
+                                    @items.Describe
+                                </td> *@
+                                <td>
+                                    <button class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                    data-bs-toggle="modal" data-bs-placement="top" title="Detail"
+                                            data-bs-target="#exampleModal" onclick="showDetails('@course.Name', '@course.Code', '@course.Instructor','@course.Semester','@course.Year')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
+                                       type="submit" asp-action="Edit" asp-route-id="@course.Id">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-light btn-round mb-0"
+                                       type="submit" asp-action="Delete" asp-route-id="@course.Id">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+                <!-- Table body END -->
+            </table>
+        </div>
+    </div>      
+</div>

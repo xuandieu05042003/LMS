@@ -1,10 +1,9 @@
-﻿
-@model IEnumerable<LMS.Models.Student>
+﻿@model IEnumerable<LMS.Models.Student>
 
 
 @{
-    ViewData["Title"] = "Student";
-    Layout = "~/Views/Shared/_LayoutLecture.cshtml";
+	ViewData["Title"] = "Student";
+	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
 
 <!--Big modal -->
@@ -24,52 +23,52 @@
 					<h1>Student Details</h1>
 
 					@* <form class="row g-4">
-						<!-- Full name -->
-						<div class="col-md-6">
-							<label class="form-label">Full Name</label>
-							<input class="form-control" type="text" value="@Model.Name">
-						</div>
+					<!-- Full name -->
+					<div class="col-md-6">
+					<label class="form-label">Full Name</label>
+					<input class="form-control" type="text" value="@Model.Name">
+					</div>
 
-						<!-- Birthday -->
-						<div class="col-md-6">
-							<label class="form-label">Birthday</label>
-							<input class="form-control" type="text" value="@Model.Birthday">
-						</div>
+					<!-- Birthday -->
+					<div class="col-md-6">
+					<label class="form-label">Birthday</label>
+					<input class="form-control" type="text" value="@Model.Birthday">
+					</div>
 
-						<!-- Phone number -->
-						<div class="col-md-6">
-							<label class="form-label">Phone Number</label>
-							<input class="form-control" type="text" value="@Model.Phone">
-						</div>
+					<!-- Phone number -->
+					<div class="col-md-6">
+					<label class="form-label">Phone Number</label>
+					<input class="form-control" type="text" value="@Model.Phone">
+					</div>
 
-						<!-- Email -->
-						<div class="col-md-6">
-							<label class="form-label">Email</label>
-							<input class="form-control" type="email" value="@Model.Email">
-						</div>
+					<!-- Email -->
+					<div class="col-md-6">
+					<label class="form-label">Email</label>
+					<input class="form-control" type="email" value="@Model.Email">
+					</div>
 
-						<!-- Address -->
-						<div class="col-md-6">
-							<label class="form-label">Address</label>
-							<input class="form-control" type="text" value="@Model.Address">
-						</div>
+					<!-- Address -->
+					<div class="col-md-6">
+					<label class="form-label">Address</label>
+					<input class="form-control" type="text" value="@Model.Address">
+					</div>
 
-						<!-- Role -->
-						<div class="col-md-6">
-							<label class="form-label">Role</label>
-							<input class="form-control" type="text" value="@Model.Role">
-						</div>
+					<!-- Role -->
+					<div class="col-md-6">
+					<label class="form-label">Role</label>
+					<input class="form-control" type="text" value="@Model.Role">
+					</div>
 
-						<!-- Password (for display purposes only, do not include in a real form) -->
-						<div class="col-md-6">
-							<label class="form-label">Password (for display purposes only)</label>
-							<input class="form-control" type="text" value="@Model.Password">
-						</div>
+					<!-- Password (for display purposes only, do not include in a real form) -->
+					<div class="col-md-6">
+					<label class="form-label">Password (for display purposes only)</label>
+					<input class="form-control" type="text" value="@Model.Password">
+					</div>
 
-						<!-- Save button -->
-						<div class="d-sm-flex justify-content-end">
-							<button type="button" class="btn btn-primary mb-0">Save Changes</button>
-						</div>
+					<!-- Save button -->
+					<div class="d-sm-flex justify-content-end">
+					<button type="button" class="btn btn-primary mb-0">Save Changes</button>
+					</div>
 					</form> *@
 				</div>
 				<!-- Card body END -->
@@ -172,12 +171,11 @@
 										<td>
 											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
 											   data-bs-toggle="modal" data-bs-placement="top" title="Detail"
-                                               data-bs-target="#exampleModal">
+											   data-bs-target="#exampleModal">
 												<i class="bi bi-eye"></i>
 											</a>
 											<a href="#" class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-											   data-bs-toggle="modal" data-bs-placement="top" title="Edit"
-											   >
+											   data-bs-toggle="modal" data-bs-placement="top" title="Edit">
 												<i class="bi bi-pencil"></i>
 											</a>
 											<button class="btn btn-light btn-round mb-0"
@@ -239,7 +237,6 @@
 	</div>
 </div>
 <!-- Page main content END -->
-
 @* <h1>Index</h1> *@
 
 @* <p>
@@ -248,10 +245,10 @@
 <table class="table">
     <thead>
         <tr> *@
-            @* <th>
+@* <th>
             @Html.DisplayNameFor(model => model.Id)
             </th> *@
-            @* <th>
+@* <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
