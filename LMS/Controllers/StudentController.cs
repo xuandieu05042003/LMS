@@ -129,6 +129,7 @@ namespace LMS.Controllers
             {
                 return NotFound();
             }
+
             return View(student);
         }
 
@@ -195,7 +196,6 @@ namespace LMS.Controllers
 			table.InsertOne(student);
 			return RedirectToAction("Student");
 		}
-
 
 		[HttpPost]
         public ActionResult Edit(Student student)
