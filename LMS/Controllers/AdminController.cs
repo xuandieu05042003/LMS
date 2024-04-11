@@ -190,10 +190,10 @@ namespace LMS.Controllers
             {
                 collectionName = "lecturer";
             }
-			else if (admin.Role == "Student")
-			{
-				collectionName = "student";
-			}
+            else if (admin.Role == "Student")
+            {
+                collectionName = "student";
+            }
 
             var table = database.GetCollection<Admin>(collectionName);
             admin.Id = Guid.NewGuid().ToString();
@@ -212,7 +212,25 @@ namespace LMS.Controllers
             }
 
             table.InsertOne(admin);
-            return RedirectToAction("Index");
+
+            // Chuyển hướng đến trang index của phần tạo tài khoản tương ứng
+            if (collectionName == "admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (collectionName == "lecturer")
+            {
+                return RedirectToAction("AdminLecture", "Lecturer");
+            }
+            else if (collectionName == "student")
+            {
+                return RedirectToAction("Student", "Student");
+            }
+            else
+            {
+                // Trong trường hợp không thể xác định được loại tài khoản, chuyển hướng về trang Index của Admin
+                return RedirectToAction("Index", "Admin");
+            }
         }
 
         public ActionResult Edit(string id)

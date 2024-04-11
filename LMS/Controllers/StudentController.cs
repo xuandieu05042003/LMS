@@ -11,7 +11,11 @@ namespace LMS.Controllers
     public class StudentController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
-
+        private readonly HomeController _homeController;
+        public StudentController(HomeController homeController)
+        {
+            _homeController = homeController;
+        }
         public IActionResult Student()
         {
 			// session for admin
@@ -197,17 +201,37 @@ namespace LMS.Controllers
 			return RedirectToAction("Student");
 		}
 
-		[HttpPost]
-        public ActionResult Edit(Student student)
+        [HttpPost]
+        public IActionResult Edit(Student student, IFormFile newImage)
         {
             if (string.IsNullOrEmpty(student.Id))
             {
                 ViewBag.Mgs = "Please provide id";
                 return View(student);
             }
+
             var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
-            table.ReplaceOne(c => c.Id == student.Id, student);
+            var table = database.GetCollection<Lecturer>("lecturer");
+
+            if (newImage != null)
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    newImage.CopyTo(memoryStream);
+                    student.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+
+            // Cập nhật thông tin giảng viên, bao gồm cả ảnh nếu có
+            var filter = Builders<Lecturer>.Filter.Eq(x => x.Id, student.Id);
+            var update = Builders<Lecturer>.Update
+                .Set(x => x.Name, student.Name)
+                .Set(x => x.Email, student.Email)
+                .Set(x => x.Password, student.Password)
+                .Set(x => x.Image, student.Image);
+
+            table.UpdateOne(filter, update);
+
             return RedirectToAction("Student");
         }
 
