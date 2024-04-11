@@ -11,12 +11,8 @@ namespace LMS.Controllers
     public class StudentController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
-        private readonly HomeController _homeController;
-        public StudentController(HomeController homeController)
-        {
-            _homeController = homeController;
-        }
-        public IActionResult Student()
+
+        public IActionResult Student(string id)
         {
             // Session for admin
             var adminId = HttpContext.Session.GetString("AdminId");
@@ -246,7 +242,7 @@ namespace LMS.Controllers
                 .Set(x => x.Image, student.Image);
 
             table.UpdateOne(filter, update);
-
+            table.ReplaceOne(c => c.Id == student.Id, student);
             return RedirectToAction("StudentDashboard");
         }
 

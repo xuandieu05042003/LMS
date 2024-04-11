@@ -172,9 +172,9 @@ namespace LMS.Controllers
                 var adminResult = await adminCollection.Find(adminFilter).FirstOrDefaultAsync();
                 if (adminResult != null)
                 {
-                    HttpContext.Session.SetString("AdminId", adminResult.Id ?? "");
-                    HttpContext.Session.SetString("AdminName", adminResult.Name ?? "");
-                    HttpContext.Session.SetString("AdminRole", adminResult.Role ?? "");
+                    HttpContext.Session.SetString("AdminId", adminResult.Id );
+                    HttpContext.Session.SetString("AdminName", adminResult.Name );
+                    HttpContext.Session.SetString("AdminRole", adminResult.Role );
                     HttpContext.Session.SetString("AdminEmail", adminResult.Email ?? "");
                     HttpContext.Session.SetString("AdminImage", adminResult.Image ?? "");
                     return RedirectToAction("IndexLogin", "Home");
@@ -185,9 +185,9 @@ namespace LMS.Controllers
                 var lecturerResult = await lecturerCollection.Find(lecturerFilter).FirstOrDefaultAsync();
                 if (lecturerResult != null)
                 {
-                    HttpContext.Session.SetString("LecturerId", lecturerResult.Id ?? "");
-                    HttpContext.Session.SetString("LecturerName", lecturerResult.Name ?? "");
-                    HttpContext.Session.SetString("LecturerRole", lecturerResult.Role ?? "");
+                    HttpContext.Session.SetString("LecturerId", lecturerResult.Id );
+                    HttpContext.Session.SetString("LecturerName", lecturerResult.Name );
+                    HttpContext.Session.SetString("LecturerRole", lecturerResult.Role );
                     HttpContext.Session.SetString("LecturerEmail", lecturerResult.Email ?? "");
                     HttpContext.Session.SetString("LecturerImage", lecturerResult.Image ?? "");
                     return RedirectToAction("IndexLogin", "Home");
@@ -198,9 +198,9 @@ namespace LMS.Controllers
                 var studentResult = await studentCollection.Find(studentFilter).FirstOrDefaultAsync();
                 if (studentResult != null)
                 {
-                    HttpContext.Session.SetString("StudentId", studentResult.Id ?? "");
-                    HttpContext.Session.SetString("StudentName", studentResult.Name ?? "");
-                    HttpContext.Session.SetString("StudentRole", studentResult.Role ?? "");
+                    HttpContext.Session.SetString("StudentId", studentResult.Id );
+                    HttpContext.Session.SetString("StudentName", studentResult.Name );
+                    HttpContext.Session.SetString("StudentRole", studentResult.Role );
                     HttpContext.Session.SetString("StudentEmail", studentResult.Email ?? "");
                     HttpContext.Session.SetString("StudentImage", studentResult.Image ?? "");
                     return RedirectToAction("IndexLogin", "Home");

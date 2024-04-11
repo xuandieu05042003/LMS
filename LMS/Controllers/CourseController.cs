@@ -200,7 +200,7 @@ namespace LMS.Controllers
             }
             return View();
 		}
-		public IActionResult CourseAdd()
+		public IActionResult CourseAdd(string id)
 		{
             // Session for admin
             var adminId = HttpContext.Session.GetString("AdminId");
@@ -266,7 +266,7 @@ namespace LMS.Controllers
 			var table = database.GetCollection<Course>("course");
 			course.Id = Guid.NewGuid().ToString();
 			table.InsertOne(course);
-			return RedirectToAction("Index");
+			return RedirectToAction("MyCourses");
 		}
 
 		public ActionResult Edit(string id)
@@ -347,7 +347,7 @@ namespace LMS.Controllers
 			var database = client.GetDatabase("universityDtabase");
 			var table = database.GetCollection<Course>("course");
 			table.ReplaceOne(c => c.Id == course.Id, course);
-			return RedirectToAction("Index");
+			return RedirectToAction("MyCourses");
 		}
 
 		public ActionResult Details(String id)
@@ -435,7 +435,7 @@ namespace LMS.Controllers
 			var database = client.GetDatabase("universityDtabase");
 			var table = database.GetCollection<Course>("course");
 			table.DeleteOne(c => c.Id == course.Id);
-			return RedirectToAction("Index");
+			return RedirectToAction("MyCourses");
 		}
 		public IActionResult Categories()
 		{

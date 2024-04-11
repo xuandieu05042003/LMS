@@ -364,6 +364,7 @@ namespace LMS.Controllers
                 .Set(x => x.Image, lecturer.Image);
 
             table.UpdateOne(filter, update);
+            table.ReplaceOne(c => c.Id == lecturer.Id, lecturer);
 
             return RedirectToAction("LectureDashboard");
         }
