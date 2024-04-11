@@ -2,54 +2,58 @@
 
 @{
 	ViewData["Title"] = "Edit";
-	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+	Layout = "~/Views/Shared/_LayoutLecture.cshtml";
 }
-
-<!-- Page main content START -->
-<div class="page-content-wrapper border">
-	<!-- Title -->
-	<div class="row">
-		<div class="col-12 mb-3">
-			<h1 class="h3 mb-2 mb-sm-0">Edit Lecturer</h1>
+<div class="col-xl-9">
+	<!-- Page main content START -->
+	<div class="card bg-transparent border rounded-3">
+		<!-- Title -->
+		<div class="card-header bg-transparent border-bottom">
+			<div class="col-12 mb-3">
+				<h1 class="h3 mb-2 mb-sm-0">Edit Lecturer</h1>
+			</div>
+		</div>
+		<!-- Card body START -->
+		<div class="card-body">
+			<form class="row g-4" asp-action="Edit" method="post" enctype="multipart/form-data">
+				<div class="col-md-5">
+					<label asp-for="Name" for="name" class="form-label">Name</label>
+					<input asp-for="Name" type="Name" class="form-control" id="Name">
+				</div>
+				<div class="col-md-4">
+					<label asp-for="Phone" for="Phone" class="form-label">Phone</label>
+					<input asp-for="Phone" type="text" class="form-control" id="Phone">
+				</div>
+				<div class="col-md-3">
+					<label asp-for="Email" for="Email" class="form-label">Email</label>
+					<input asp-for="Email" type="Email" class="form-control" id="Email">
+				</div>
+				<div class="col-5">
+					<label asp-for="Username" for="Username" class="form-label">Username</label>
+					<input asp-for="Username" type="text" class="form-control" id="Username">
+				</div>
+				<div class="col-7">
+					<label asp-for="Password" for="Password" class="form-label">Password</label>
+					<input asp-for="Password" type="text" class="form-control" id="Password">
+				</div>
+				<div class="form-group">
+					<label asp-for="Role" class="form-label"></label>
+					<select asp-for="Role" class="form-control">
+						<option value="Admin">Admin</option>
+						<option value="Lecturer">Lecturer</option>
+					</select>
+					<span asp-validation-for="Role" class="text-danger"></span>
+				</div>
+				<div class="col-7">
+					<label asp-for="Image" class="form-label"></label>
+					<input asp-for="Image" type="file" class="form-control" />
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Save" class="btn btn-primary" />
+					<a asp-action="Lecture">Back to List</a>
+				</div>
+			</form>
 		</div>
 	</div>
-	<form class="row g-3" asp-action="Edit" method="post" enctype="multipart/form-data">
-		<div class="col-md-5">
-			<label asp-for="Name" for="name" class="form-label">Name</label>
-			<input asp-for="Name" type="Name" class="form-control" id="Name">
-		</div>
-		<div class="col-md-4">
-			<label asp-for="Phone" for="Phone" class="form-label">Phone</label>
-			<input asp-for="Phone" type="text" class="form-control" id="Phone">
-		</div>
-		<div class="col-md-3">
-			<label asp-for="Email" for="Email" class="form-label">Email</label>
-			<input asp-for="Email" type="Email" class="form-control" id="Email">
-		</div>
-		<div class="col-5">
-			<label asp-for="Username" for="Username" class="form-label">Username</label>
-			<input asp-for="Username" type="text" class="form-control" id="Username">
-		</div>
-		<div class="col-7">
-			<label asp-for="Password" for="Password" class="form-label">Password</label>
-			<input asp-for="Password" type="text" class="form-control" id="Password">
-		</div>
-		<div class="form-group">
-			<label asp-for="Role" class="form-label"></label>
-			<select asp-for="Role" class="form-control">
-				<option value="Admin">Admin</option>
-				<option value="Lecturer">Lecturer</option>
-			</select>
-			<span asp-validation-for="Role" class="text-danger"></span>
-		</div>
-		<div class="col-7">
-			<label asp-for="Image" class="form-label"></label>
-			<input asp-for="Image" type="file" class="form-control" />
-		</div>
-		<div class="form-group">
-			<input type="submit" value="Save" class="btn btn-primary" />
-			<a asp-action="AdminLecture">Back to List</a>
-		</div>
-	</form>
 </div>
 <!-- Page main content END -->

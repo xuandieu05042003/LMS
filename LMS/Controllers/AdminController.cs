@@ -12,6 +12,7 @@ namespace LMS.Controllers
     public class AdminController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+		
         public IActionResult AdminDashboard()
         {
 			// session for admin

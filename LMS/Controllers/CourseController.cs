@@ -454,7 +454,10 @@ namespace LMS.Controllers
 			}
 			var database = client.GetDatabase("universityDtabase");
 			var table = database.GetCollection<Course>("course");
-			var course = table.Find(_ => true).FirstOrDefault();
+            var course = table.Find(c => c.Id == id).FirstOrDefault();
+			if(course ==null){
+				return NotFound();
+			}
 
 			return View(course);
 		}
