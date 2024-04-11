@@ -212,42 +212,32 @@ namespace LMS.Controllers
 			return RedirectToAction("Student");
 		}
 
-        [HttpPost]
-        public IActionResult Edit(Student student, IFormFile newImage)
-        {
-            if (string.IsNullOrEmpty(student.Id))
-            {
-                ViewBag.Mgs = "Please provide id";
-                return View(student);
-            }
+		[HttpPost]
+		public IActionResult Edit(Student student, IFormFile Image)
+		{
+			if (string.IsNullOrEmpty(student.Id))
+			{
+				ViewBag.Mgs = "Please provide id";
+				return View(student);
+			}
+			var database = client.GetDatabase("universityDtabase");
+			var table = database.GetCollection<Student>("student");
 
-            var database = client.GetDatabase("universityDtabase");
-            var table = database.GetCollection<Student>("student");
+			if (Image != null)
+			{
+				using (MemoryStream memoryStream = new MemoryStream())
+				{
+					Image.CopyTo(memoryStream);
+					student.Image = Convert.ToBase64String(memoryStream.ToArray());
+				}
+			}
 
-            if (newImage != null)
-            {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    newImage.CopyTo(memoryStream);
-                    student.Image = Convert.ToBase64String(memoryStream.ToArray());
-                }
-            }
-
-            // Cập nhật thông tin giảng viên, bao gồm cả ảnh nếu có
-            var filter = Builders<Student>.Filter.Eq(x => x.Id, student.Id);
-            var update = Builders<Student>.Update
-                .Set(x => x.Name, student.Name)
-                .Set(x => x.Email, student.Email)
-                .Set(x => x.Password, student.Password)
-                .Set(x => x.Image, student.Image);
-
-            table.UpdateOne(filter, update);
-            table.ReplaceOne(c => c.Id == student.Id, student);
-            return RedirectToAction("StudentDashboard");
-        }
+			table.ReplaceOne(c => c.Id == student.Id, student);
+			return RedirectToAction("StudentDashboard");
+		}
 
 
-        public ActionResult Details(String id)
+		public ActionResult Details(String id)
         {
             // Session for admin
             var adminId = HttpContext.Session.GetString("AdminId");

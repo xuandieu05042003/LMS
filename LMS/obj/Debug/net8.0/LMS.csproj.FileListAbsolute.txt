@@ -1780,3 +1780,5 @@ D:\Group5\LMS\LMS\obj\Debug\net8.0\refint\LMS.dll
 D:\Group5\LMS\LMS\obj\Debug\net8.0\LMS.pdb
 D:\Group5\LMS\LMS\obj\Debug\net8.0\LMS.genruntimeconfig.cache
 D:\Group5\LMS\LMS\obj\Debug\net8.0\ref\LMS.dll
+D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\IT05202 - APPLICATION DEVELOPMENT(1670)\LMS\LMS\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

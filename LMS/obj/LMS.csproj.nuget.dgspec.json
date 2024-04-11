@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Group5\\LMS\\LMS\\LMS.csproj": {}
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {}
   },
   "projects": {
-    "D:\\Group5\\LMS\\LMS\\LMS.csproj": {
+    "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Group5\\LMS\\LMS\\LMS.csproj",
+        "projectUniqueName": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
         "projectName": "LMS",
-        "projectPath": "D:\\Group5\\LMS\\LMS\\LMS.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Group5\\LMS\\LMS\\obj\\",
+        "projectPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\LMS.csproj",
+        "packagesPath": "C:\\Users\\FPT SHOP\\.nuget\\packages\\",
+        "outputPath": "D:\\IT05202 - APPLICATION DEVELOPMENT(1670)\\LMS\\LMS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\FPT SHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,6 +48,10 @@
             "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
