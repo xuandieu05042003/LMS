@@ -11,10 +11,11 @@
         document.getElementById('detailName').innerText = name;
         document.getElementById('detailCode').innerText = code;
         document.getElementById('detailInstructor').innerText = instructor;
-        document.getElementById('detailSemester').innerText = semester;
+        document.getElementById('detailSemester').innerText = semester; 
         document.getElementById('detailYear').innerText = year;
         document.getElementById('detailVideo').innerText = video;
         document.getElementById('detailDescribe').innerText = describe;
+        document.getElementById('modalVideoPlayer').innerHTML = '<div id="player-youtube" data-plyr-provider="youtube" data-plyr-embed-id="' + video + '"></div>';
     }
     function closeModal() {
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
@@ -31,7 +32,9 @@
             </div>
             <div class="modal-body d-flex">
                 <div class="col-2 g-2" style="box-shadow: -1px 1px 19px -7px; border-radius: 6px">
-                    <img src="data:image;base64," class="img-fluid w-500px rounded shadow-lg" id="detailImage">
+                    <div class="video-container">
+                        <div id="modalVideoPlayer"></div>
+                    </div>
                 </div>
                 <form class="col row ps-3 g-3">
                     <div class="col-md-5">
@@ -48,12 +51,6 @@
                     </div>
                     <div class="col-md-2">
                         <h6 class="form-label">Year: <span class="form-control" id="detailYear"></span></h6>
-                    </div>
-                    <div class="col-md-2">
-                        <h6 class="form-label">Video: <span class="form-control" id="detailVideo"></span></h6>
-                    </div>
-                    <div class="col-md-2">
-                        <h6 class="form-label">Describe: <span class="form-control" id="detailDescribe"></span></h6>
                     </div>
                 </form>
             </div>
@@ -77,8 +74,6 @@
                         <th scope="col" class="text border-0 rounded-start">Instructor</th>
                         <th scope="col" class="text border-0 rounded-start">Semester</th>
                         <th scope="col" class="text border-0 rounded-start">Year</th>
-                        @* <th scope="col" class="text border-0 rounded-start">Video</th>
-                        <th scope="col" class="text border-0 rounded-start">Describe</th> *@
                         <th scope="col" class="border-0 rounded-end">Action</th>
                     </tr>
                 </thead>
@@ -122,7 +117,7 @@
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                     <a class="btn btn-light btn-round mb-0"
-                                       type="submit" asp-action="Delete" asp-route-id="@course.Id">
+                                       type="submit"  asp-action="Delete" asp-route-id="@course.Id">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
