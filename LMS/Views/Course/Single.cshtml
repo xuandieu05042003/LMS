@@ -79,7 +79,7 @@
                                     <!-- Avatar image -->
                                     <div class="avatar avatar-lg">
                                         <img class="avatar-img rounded-circle"
-                                            src="assets/images/avatar/05.jpg"
+                                            src="data:image;base64,@ViewBag.LecturerImage"
                                             alt="avatar">
                                     </div>
                                     <div class="ms-3">
@@ -214,6 +214,7 @@
                                         Description
                                     </h5>
                                     <p class="mb-3">
+                                        @Model.Describe
                                     </p>
                                     <!-- Course detail END -->
 

@@ -6,6 +6,21 @@
 
 <div class="col-xl-9">
 	<!-- Page main content START -->
+	@* Toast *@
+	<div class="toast-container position-fixed bottom-0 end-0 ">
+		<div id="liveToast" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true"
+			style="backdrop-filter: blur(10px);">
+			<div class="toast-header">
+
+				<strong class="me-auto ">System</strong>
+				<small>Just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Successfully deleted admin from the system
+			</div>
+		</div>
+	</div>
 	<div class="page-content-wrapper border">
 		<!-- Title -->
 		<div class="row">
