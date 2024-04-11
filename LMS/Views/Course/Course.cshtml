@@ -1,11 +1,11 @@
-﻿@model IEnumerable<LMS.Models.Course>
+﻿@model List<LMS.Models.Course>
 
 @{
     ViewData["Title"] = "Course";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <script>
-    function showDetails(name, code, instructor, sesmester, year, video, describe) {
+    function showDetails(name, code, instructor, semester, year) {
         // Cập nhật nội dung của modal với thông tin chi tiết
         // document.getElementById('detailImage').src = "data:image;base64," + image;
         document.getElementById('detailName').innerText = name;
@@ -13,7 +13,6 @@
         document.getElementById('detailInstructor').innerText = instructor;
         document.getElementById('detailSemester').innerText = semester;
         document.getElementById('detailYear').innerText = year;
-        document.getElementById('detailVideo').innerText = video;
         document.getElementById('detailDescribe').innerText = describe;
     }
     function closeModal() {
@@ -26,34 +25,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Admin</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Course</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex">
                 <div class="col-2 g-2" style="box-shadow: -1px 1px 19px -7px; border-radius: 6px">
-                    <img src="data:image;base64," class="img-fluid w-500px rounded shadow-lg" id="detailImage">
+                    <div class="video-container">
+                        <div id="modalVideoPlayer"></div>
+                    </div>
                 </div>
                 <form class="col row ps-3 g-3">
                     <div class="col-md-5">
                         <h6 class="form-label">Name: <span class="form-control" id="detailName"></span></h6>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <h6 class="form-label">Code: <span class="form-control" id="detailCode"></span></h6>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <h6 class="form-label">Instructor: <span class="form-control" id="detailInstructor"></span></h6>
                     </div>
-                    <div class="col-md-2">
-                        <h6 class="form-label">Semester: <span class="form-control" id="detailSemester"></span></h6>
+                    <div class="col-md-5">
+                        <h6 class="form-label">Sesmester: <span class="form-control" id="detailSemester"></span></h6>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-5">
                         <h6 class="form-label">Year: <span class="form-control" id="detailYear"></span></h6>
-                    </div>
-                    <div class="col-md-2">
-                        <h6 class="form-label">Video: <span class="form-control" id="detailVideo"></span></h6>
-                    </div>
-                    <div class="col-md-2">
-                        <h6 class="form-label">Describe: <span class="form-control" id="detailDescribe"></span></h6>
                     </div>
                 </form>
             </div>
@@ -115,52 +110,36 @@
                                     <th scope="col" class="text border-0 rounded-start">Instructor</th>
                                     <th scope="col" class="text border-0 rounded-start">Semester</th>
                                     <th scope="col" class="text border-0 rounded-start">Year</th>
-                                    <th scope="col" class="text border-0 rounded-start">Video</th>
-                                    <th scope="col" class="text border-0 rounded-start">Describe</th>
                                     <th scope="col" class="border-0 rounded-end">Action</th>
                                 </tr>
                             </thead>
 
                             <!-- Table body START -->
                             <tbody>
-                                @foreach (var items in Model)
+                                @foreach (var course in Model)
                                 {
                                     <tr>
                                         <td>
-                                            @items.Name
+                                            @course.Name
                                         </td>
                                         <td>
-                                            @items.Code
+                                            @course.Code
                                         </td>
                                         <td>
-                                            @items.Instructor
+                                            @course.Instructor
                                         </td>
                                         <td>
-                                            @items.Semester
+                                            @course.Semester
                                         </td>
                                         <td>
-                                            @items.Year
-                                        </td>
-                                        <td>
-                                            @items.Video
-                                        </td>
-                                        <td>
-                                            @items.Describe
+                                            @course.Year
                                         </td>
                                         <td>
                                             <button class="btn btn-light btn-round me-1 mb-1 mb-md-0"
                                                     data-bs-toggle="modal" data-bs-placement="top" title="Detail"
-                                                    data-bs-target="#exampleModal" onclick="showDetails('@items.Name', '@items.Code', '@items.Instructor','@items.Semester','@items.Year','@items.Video','@items.Describe')">
+                                                    data-bs-target="#exampleModal" onclick="showDetails('@course.Name', '@course.Code', '@course.Instructor','@course.Semester','@course.Year')">
                                                 <i class="bi bi-eye"></i>
                                             </button>
-                                            @* <a class="btn btn-light btn-round me-1 mb-1 mb-md-0"
-                                               type="submit" asp-action="Edit" asp-route-id="@items.Id">
-                                                <i class="bi bi-pencil"></i>
-                                            </a>
-                                            <a class="btn btn-light btn-round mb-0"
-                                               type="submit" asp-action="Delete" asp-route-id="@items.Id">
-                                                <i class="bi bi-trash"></i>
-                                            </a> *@
                                         </td>
                                     </tr>
                                 }

@@ -338,23 +338,12 @@
 										<a class="list-group-item active" href="@Url.Action("LectureDashboard", "Lecturer")">
 											<i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
 										</a>
-										@if (@ViewBag.Role == "Lecturer")
+										@if (ViewBag.Role == "Lecturer")
 										{
 											<a class="list-group-item" href="@Url.Action("MyCourses", "Course")">
-												<i class="bi bi-basket fa-fw me-2"></i>My
-												Courses
+												<i class="bi bi-basket fa-fw me-2"></i>My Courses
 											</a>
 										}
-										@* <a class="list-group-item" href="@Url.Action("MyCourses", "Lecturer")">
-										<i class="bi bi-basket fa-fw me-2"></i>My
-										Courses
-										</a> *@
-										@* @if (@ViewBag.Role == "Lecturer")
-										{
-										<a class="list-group-item" href="instructor-studentlist.html">
-										<i class="bi bi-people fa-fw me-2"></i>Students
-										</a>
-										} *@
 										@if (@ViewBag.Role == "Lecturer")
 										{
 											<a class="list-group-item" href="@Url.Action("Edit", "Lecturer", new { id = ViewBag.Id })"
