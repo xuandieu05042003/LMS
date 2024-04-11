@@ -5,16 +5,17 @@
 }
 
 <script>
-    function showDetails(name, code, instructor, sesmester, year, video, describe) {
+    function showDetails(name, code, instructor, semester, year, video) {
         // Cập nhật nội dung của modal với thông tin chi tiết
         // document.getElementById('detailImage').src = "data:image;base64," + image;
         document.getElementById('detailName').innerText = name;
         document.getElementById('detailCode').innerText = code;
         document.getElementById('detailInstructor').innerText = instructor;
-        document.getElementById('detailSemester').innerText = semester;
+        document.getElementById('detailSemester').innerText = semester; 
         document.getElementById('detailYear').innerText = year;
         document.getElementById('detailVideo').innerText = video;
         document.getElementById('detailDescribe').innerText = describe;
+        document.getElementById('modalVideoPlayer').innerHTML = '<div id="player-youtube" data-plyr-provider="youtube" data-plyr-embed-id="' + video + '"></div>';
     }
     function closeModal() {
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
@@ -27,7 +28,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Admin</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Details Course</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex">
@@ -75,8 +76,6 @@
                         <th scope="col" class="text border-0 rounded-start">Instructor</th>
                         <th scope="col" class="text border-0 rounded-start">Semester</th>
                         <th scope="col" class="text border-0 rounded-start">Year</th>
-                        @* <th scope="col" class="text border-0 rounded-start">Video</th>
-                        <th scope="col" class="text border-0 rounded-start">Describe</th> *@
                         <th scope="col" class="border-0 rounded-end">Action</th>
                     </tr>
                 </thead>
@@ -120,7 +119,7 @@
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                     <a class="btn btn-light btn-round mb-0"
-                                       type="submit" asp-action="Delete" asp-route-id="@course.Id">
+                                       type="submit"  asp-action="Delete" asp-route-id="@course.Id">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
