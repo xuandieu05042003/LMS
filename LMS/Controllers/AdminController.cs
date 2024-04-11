@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using LMS.Models;
+using MongoDB.Bson;
 
 namespace LMS.Controllers
 {
     public class AdminController : Controller
     {
         private MongoClient client = new MongoClient("mongodb+srv://dieunxbd00122:dieu050403@lms.f19fpne.mongodb.net/");
+		
         public IActionResult AdminDashboard()
         {
 			// session for admin
@@ -121,6 +123,7 @@ namespace LMS.Controllers
 			var database = client.GetDatabase("universityDtabase");
             var table = database.GetCollection<Admin>("admin");
             var admins = table.Find(FilterDefinition<Admin>.Empty).ToList();
+			ViewBag.userCount = admins.Count;
             return View(admins);
         }
 
